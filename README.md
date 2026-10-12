@@ -1,6 +1,6 @@
-# Ndaje — Site vitrine
+# Ndajé — Site vitrine
 
-Le site public de Ndaje : accueil, modèles, formules, demande d'invitation, contact.
+Le site public de Ndajé : accueil, modèles, formules, demande d'invitation, contact.
 Les invitations des clients et la démo sont dans un **autre dépôt** : `ndaje-template`.
 
 HTML, CSS et JavaScript purs, sans build. Test en local :
@@ -18,7 +18,7 @@ Tout est dans `config.js` :
 - `demoUrl` : adresse de la démo d'invitation (projet `ndaje-template`).
 - `prix` et `delais` : affichés partout sur le site.
 
-À faire plus tard : remplacer le logo provisoire (commentaire `LOGO` dans l'en-tête de chaque page), les cadres « Photo à venir » par les visuels d'Aicha, et ajouter `og:url` / `og:image` (adresse complète) une fois le domaine prêt.
+Le logo est dans `assets/logo.png` (en-tête et favicon). À faire plus tard : remplacer les cadres « Photo à venir » par les visuels d'Aicha, et ajouter `og:url` / `og:image` (adresse complète) une fois le domaine prêt. Le nom s'écrit **Ndajé** dans tous les textes visibles.
 
 ## Les pages
 

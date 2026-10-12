@@ -196,7 +196,7 @@
       var t = totalCommande();
       var date = dateFr(valeur(creer, "date"));
       var l = [
-        "Bonjour Ndaje, je souhaite créer une invitation.",
+        "Bonjour Ndajé, je souhaite créer une invitation.",
         "Modèle : " + choisi("modele"),
         "Type : " + choisi("type"),
         "Noms / hôtes : " + noms,
@@ -238,7 +238,7 @@
       erreurContact.textContent = "";
       var type = contactForm.querySelector("input[name=type]:checked");
       var l = [
-        "Bonjour Ndaje, je vous contacte depuis le site.",
+        "Bonjour Ndajé, je vous contacte depuis le site.",
         "Célébration : " + (type ? type.value : "non précisée"),
         "Nom : " + nom,
         "Mon numéro WhatsApp : " + valeur(contactForm, "indicatif") + " " + tel,

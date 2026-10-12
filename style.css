@@ -73,7 +73,6 @@ section { padding: 3.25rem 0; }
 .entete { position: sticky; top: 0; z-index: 50; background: var(--verre); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(27,71,56,.6); box-shadow: 0 4px 30px rgba(0,0,0,.7); }
 .entete .conteneur { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 1rem; }
 .marque { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; font-family: var(--police-titre); font-weight: 700; font-size: 1.45rem; letter-spacing: .02em; color: #fff; }
-.marque::after { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--or); box-shadow: 0 0 6px var(--or); }
 .logo-vide { width: 36px; height: 36px; border-radius: 50%; padding: 1.5px; background: linear-gradient(135deg, var(--or-clair), var(--or), var(--ligne)); box-shadow: 0 0 15px rgba(229,193,88,.25); display: grid; place-items: center; flex: none; }
 .logo-vide::before { content: ""; position: absolute; }
 .logo-vide:empty::after { content: "N"; width: 100%; height: 100%; border-radius: 50%; background: var(--sombre); display: grid; place-items: center; font-family: var(--police-titre); font-size: 1.15rem; font-weight: 700; color: var(--or); }
@@ -337,3 +336,8 @@ a.carte:hover { border-color: rgba(229,193,88,.5); }
 /* Évite qu'un champ (date, téléphone) élargisse la page sur petit écran */
 .atelier > *, .formulaire, .champ, .deux-col > * { min-width: 0; }
 input, select, textarea { min-width: 0; max-width: 100%; }
+
+/* Logo */
+.marque { gap: .5rem; }
+.logo-rond { flex: none; width: 54px; height: 54px; padding: 2px; border-radius: 50%; background: linear-gradient(135deg, #E9C766 0%, #9C761E 50%, #E9C766 100%); box-shadow: 0 0 16px rgba(229,193,88,.25); }
+.logo-rond img { width: 100%; height: 100%; padding: 11px 7px; object-fit: contain; border-radius: 50%; background: var(--sombre); filter: brightness(1.25); }
