@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Créer mon invitation — Ndaje</title>
-  <meta name="description" content="Dites-nous votre cérémonie : votre demande s'ouvre dans WhatsApp, prête à envoyer à Ndaje.">
+  <meta name="description" content="Personnalisez votre invitation Ndaje en 4 étapes, avec aperçu en direct. Votre demande s'ouvre dans WhatsApp, prête à envoyer.">
   <meta name="theme-color" content="#0E0D0B">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Créer mon invitation — Ndaje">
-  <meta property="og:description" content="Dites-nous votre cérémonie : votre demande s'ouvre dans WhatsApp, prête à envoyer à Ndaje.">
+  <meta property="og:description" content="Personnalisez votre invitation Ndaje en 4 étapes, avec aperçu en direct. Votre demande s'ouvre dans WhatsApp, prête à envoyer.">
   <!-- À AJOUTER quand le domaine et le logo seront prêts : og:url et og:image en adresse complète (https://…) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,78 +31,144 @@
   <main id="contenu">
 
     <section>
-      <div class="conteneur" style="max-width:44rem">
+      <div class="conteneur">
         <div class="entete-section">
-          <span class="surtitre">Demande d'invitation</span>
-          <h1>Parlons de votre <span class="script">célébration</span></h1>
-          <p class="doux">Remplissez ce court formulaire. Votre demande s'ouvre dans WhatsApp et vous l'envoyez vous-même : rien n'est enregistré sur ce site.</p>
+          <span class="surtitre">Atelier de confection · Ndaje</span>
+          <h1>Façonnez votre <span class="script">invitation</span></h1>
+          <p class="doux">Personnalisez votre invitation en 4 étapes simples, avec un aperçu en direct. Votre demande s'ouvre dans WhatsApp et vous l'envoyez vous-même : rien n'est enregistré sur ce site.</p>
         </div>
 
-        <form id="form-commande" class="formulaire" novalidate>
-          <fieldset class="champ">
-            <legend>Nature de la célébration</legend>
-            <div class="choix">
-              <label><input type="radio" name="type" value="Mariage" checked> Mariage</label>
-              <label><input type="radio" name="type" value="Baptême"> Baptême</label>
-              <label><input type="radio" name="type" value="Anniversaire"> Anniversaire</label>
-              <label><input type="radio" name="type" value="Entreprise"> Entreprise</label>
+        <ol class="etapes" aria-label="Étapes">
+          <li><a href="#etape-1"><span>1</span>Modèle</a></li>
+          <li><a href="#etape-2"><span>2</span>Protocole</a></li>
+          <li><a href="#etape-3"><span>3</span>Médias</a></li>
+          <li><a href="#etape-4"><span>4</span>Validation</a></li>
+        </ol>
+
+        <div class="atelier">
+          <form id="form-creer" class="formulaire" novalidate>
+
+            <div class="champ panneau" id="etape-1" role="group" aria-labelledby="titre-1">
+              <h2 class="titre-etape" id="titre-1"><span class="rond">1</span> Le modèle</h2>
+              <div class="choix choix-col">
+                <label><input type="radio" name="modele" value="Modèle de la démo" checked><span>Le modèle de la démo en ligne</span></label>
+                <label><input type="radio" name="modele" value="Autre modèle Ndaje"><span>Un autre modèle Ndaje (choisi avec vous)</span></label>
+                <label><input type="radio" name="modele" value="Sur mesure"><span>Création sur mesure (formule Prestige)</span></label>
+              </div>
+              <p class="note">Les nouveaux modèles arrivent bientôt. <a href="#" data-demo>Ouvrir la démo</a></p>
+
+              <h3 class="sous-titre">L'événement et les hôtes</h3>
+              <div class="choix">
+                <label><input type="radio" name="type" value="Mariage" checked><span>Mariage</span></label>
+                <label><input type="radio" name="type" value="Baptême"><span>Baptême</span></label>
+                <label><input type="radio" name="type" value="Anniversaire"><span>Anniversaire</span></label>
+                <label><input type="radio" name="type" value="Entreprise"><span>Entreprise</span></label>
+              </div>
+
+              <div class="champ">
+                <label for="noms">Noms des mariés ou de l'hôte</label>
+                <input id="noms" name="noms" type="text" autocomplete="off" placeholder="Ex. prénoms des mariés" required>
+                <span class="note">Ils apparaîtront en tête de l'invitation.</span>
+              </div>
+              <div class="deux-col">
+                <div class="champ"><label for="date">Date de la célébration</label><input id="date" name="date" type="date"></div>
+                <div class="champ"><label for="heure">Heure de début</label><input id="heure" name="heure" type="text" placeholder="Ex. 10h00"></div>
+              </div>
+              <div class="champ">
+                <label for="lieu">Lieu de la réception</label>
+                <input id="lieu" name="lieu" type="text" autocomplete="off" placeholder="Nom du lieu et adresse">
+              </div>
+              <div class="champ">
+                <label for="programme">Programme de la journée</label>
+                <textarea id="programme" name="programme" placeholder="Ex. 10h00 cérémonie à la mosquée, 13h00 déjeuner, 20h00 soirée (avec le lieu de chaque étape)"></textarea>
+              </div>
             </div>
-          </fieldset>
 
-          <div class="champ">
-            <label for="noms">Noms des mariés ou de l'hôte</label>
-            <input id="noms" name="noms" type="text" autocomplete="off" placeholder="Ex. prénoms des mariés" required>
-          </div>
+            <div class="champ panneau" id="etape-2" role="group" aria-labelledby="titre-2">
+              <h2 class="titre-etape" id="titre-2"><span class="rond">2</span> Culture et protocole</h2>
+              <div class="choix choix-col">
+                <label><input type="radio" name="langue" value="Français" checked><span>Français uniquement</span></label>
+                <label><input type="radio" name="langue" value="Français et wolof"><span>Français et wolof (+<span data-prix="optionWolof"></span> F, relu avant livraison)</span></label>
+              </div>
 
-          <div class="champ">
-            <label for="tel">Votre numéro WhatsApp</label>
-            <input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex. +221 …" required>
-          </div>
+              <h3 class="sous-titre">Cagnotte directe</h3>
+              <div class="choix choix-col"><label><input type="checkbox" name="cagnotte" value="oui" id="cagnotte"><span>Je veux une cagnotte Wave / Orange Money</span></label></div>
+              <div id="champs-cagnotte" hidden>
+                <p class="note">L'argent va directement sur votre numéro. Ndaje n'encaisse et ne stocke jamais cet argent.</p>
+                <div class="champ"><label for="titulaire">Nom du titulaire</label><input id="titulaire" name="titulaire" type="text" autocomplete="off"></div>
+                <div class="deux-col">
+                  <div class="champ"><label for="wave">Numéro Wave</label><input id="wave" name="wave" type="tel" inputmode="tel"></div>
+                  <div class="champ"><label for="om">Numéro Orange Money</label><input id="om" name="om" type="tel" inputmode="tel"></div>
+                </div>
+              </div>
 
-          <div class="champ">
-            <label for="date">Date de l'événement</label>
-            <input id="date" name="date" type="date">
-          </div>
-
-          <div class="champ">
-            <label for="invites">Nombre d'invités estimé</label>
-            <select id="invites" name="invites">
-              <option value="">Je ne sais pas encore</option>
-              <option>Moins de 50</option>
-              <option>50 à 100</option>
-              <option>100 à 300</option>
-              <option>Plus de 300</option>
-            </select>
-          </div>
-
-          <div class="champ">
-            <label for="formule">Formule souhaitée</label>
-            <select id="formule" name="formule">
-              <option value="">Conseillez-moi</option>
-              <option>Essentiel</option>
-              <option>Premium</option>
-              <option>Prestige</option>
-            </select>
-          </div>
-
-          <fieldset class="champ">
-            <legend>Options</legend>
-            <div class="choix" style="grid-template-columns:1fr">
-              <label><input type="checkbox" name="option" value="Version wolof"> Version wolof</label>
-              <label><input type="checkbox" name="option" value="Express 24 h"> Express (livraison en 24 h)</label>
-              <label><input type="checkbox" name="option" value="QR Pass"> QR Pass (contrôle d'entrée)</label>
+              <div class="deux-col">
+                <div class="champ"><label for="limite">Date limite de réponse</label><input id="limite" name="limite" type="date"></div>
+                <div class="champ">
+                  <label for="maxp">Personnes max. par réponse</label>
+                  <select id="maxp" name="maxp"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option></select>
+                </div>
+              </div>
             </div>
-          </fieldset>
 
-          <div class="champ">
-            <label for="souhaits">Souhaits particuliers</label>
-            <textarea id="souhaits" name="souhaits" placeholder="Couleurs, thème, cagnotte Wave ou Orange Money, langue…"></textarea>
-          </div>
+            <div class="champ panneau" id="etape-3" role="group" aria-labelledby="titre-3">
+              <h2 class="titre-etape" id="titre-3"><span class="rond">3</span> Médias et ambiance</h2>
+              <p class="doux">Après votre demande, vous nous enverrez par WhatsApp une photo de couverture et jusqu'à 3 photos pour la galerie (JPG). Nous les compressons pour que la page reste légère.</p>
+              <h3 class="sous-titre">Musique à l'ouverture</h3>
+              <div class="choix choix-col">
+                <label><input type="radio" name="musique" value="Avec musique d'ambiance" checked><span>Avec musique d'ambiance (choisie avec vous)</span></label>
+                <label><input type="radio" name="musique" value="Ouverture silencieuse"><span>Ouverture silencieuse</span></label>
+              </div>
+            </div>
 
-          <p class="erreur" id="erreur-form" role="alert"></p>
-          <button class="btn btn-or btn-bloc" type="submit">Envoyer ma demande sur WhatsApp</button>
-          <p class="note">Les prix et les délais sont sur la page <a href="formules.html">Formules</a>.</p>
-        </form>
+            <div class="champ panneau" id="etape-4" role="group" aria-labelledby="titre-4">
+              <h2 class="titre-etape" id="titre-4"><span class="rond">4</span> Validation</h2>
+              <div class="champ">
+                <label for="formule">Formule</label>
+                <select id="formule" name="formule">
+                  <option value="Essentiel">Essentiel</option>
+                  <option value="Premium" selected>Premium</option>
+                  <option value="Prestige">Prestige</option>
+                </select>
+              </div>
+              <div class="choix choix-col">
+                <label><input type="checkbox" name="option" value="Express 24 h" data-opt="optionExpress"><span>Express, livraison en 24 h (+<span data-prix="optionExpress"></span> F)</span></label>
+                <label><input type="checkbox" name="option" value="QR Pass" data-opt="optionQrPass"><span>QR Pass, contrôle d'entrée (+<span data-prix="optionQrPass"></span> F)</span></label>
+              </div>
+              <div class="champ"><label for="tel">Votre numéro WhatsApp</label><input id="tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex. +221 …" required></div>
+              <div class="champ"><label for="souhaits">Souhaits particuliers</label><textarea id="souhaits" name="souhaits" placeholder="Couleurs, thème, autres demandes…"></textarea></div>
+
+              <div class="recap" aria-live="polite">
+                <div class="recap-ligne"><span>Formule <strong id="recap-formule">Premium</strong></span><span><span id="recap-prix"></span> FCFA</span></div>
+                <div class="recap-ligne" id="recap-options" hidden><span>Options</span><span><span id="recap-opt-prix"></span> FCFA</span></div>
+                <div class="recap-ligne recap-total"><span>Total estimé</span><strong><span id="recap-total"></span> FCFA</strong></div>
+                <p class="note" style="margin:.5rem 0 0">Estimation : le devis final est confirmé avec vous sur WhatsApp. Livraison : <span id="recap-delai"></span>.</p>
+              </div>
+
+              <p class="erreur" id="erreur-form" role="alert"></p>
+              <button class="btn btn-or btn-bloc btn-large" type="submit">Envoyer ma demande sur WhatsApp <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+
+          <aside class="apercu" aria-label="Aperçu en direct">
+            <span class="surtitre">Rendu en temps réel · écran invité</span>
+            <div class="carton">
+              <div class="carton-int">
+                <div class="carton-haut"><span class="pastille"><i></i>Invitation</span></div>
+                <div class="carton-milieu">
+                  <div class="sceau" id="ap-sceau" aria-hidden="true">N</div>
+                  <span class="etiquette-or" id="ap-type">Mariage</span>
+                  <h2 id="ap-noms">Vos noms</h2>
+                  <div class="filet"></div>
+                  <p id="ap-date">Date de la célébration</p>
+                  <p id="ap-lieu">Lieu de la réception</p>
+                </div>
+                <div class="carton-bas"><span class="btn btn-or btn-petit" aria-hidden="true">Confirmer ma présence</span></div>
+              </div>
+            </div>
+            <p class="note" style="text-align:center">Aperçu indicatif. Le rendu final est dessiné avec vous.</p>
+          </aside>
+        </div>
       </div>
     </section>
   </main>

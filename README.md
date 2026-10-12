@@ -14,11 +14,18 @@ python3 -m http.server 8000      # puis http://localhost:8000/
 Tout est dans `config.js` :
 
 - `whatsapp` : numéro de commande, format international sans `+` (ex. `221771234567`). Vide = les boutons affichent « bientôt disponible ».
-- `email` : adresse de contact (vide = masquée).
+- `email`, `telephone`, `horaires`, `ville` : affichés sur la page Contact seulement s'ils sont remplis (vides = masqués).
 - `demoUrl` : adresse de la démo d'invitation (projet `ndaje-template`).
 - `prix` et `delais` : affichés partout sur le site.
 
 À faire plus tard : remplacer le logo provisoire (commentaire `LOGO` dans l'en-tête de chaque page), les cadres « Photo à venir » par les visuels d'Aicha, et ajouter `og:url` / `og:image` (adresse complète) une fois le domaine prêt.
+
+## Les pages
+
+- `index.html` : accueil. `modeles.html` : catalogue (filtres par cérémonie). `formules.html` : tarifs et comparatif.
+- `creer.html` : atelier en 4 étapes avec aperçu en direct et total estimé. Il accepte `?type=bapteme` et `?formule=Premium` pour préremplir.
+- `contact.html` : WhatsApp, demande personnalisée, questions fréquentes.
+- Les formulaires ne stockent rien : ils ouvrent WhatsApp avec le message prêt à envoyer.
 
 ## Mise en ligne
 

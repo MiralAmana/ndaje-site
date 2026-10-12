@@ -286,3 +286,54 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--o
   .gestes { grid-template-columns: repeat(3, 1fr); }
   .geste { flex-direction: column; }
 }
+
+/* ===== Pages Modèles, Créer, Contact ===== */
+.col-corps-gd { flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 1rem; }
+.atouts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: .5rem; }
+.atouts li { background: var(--sombre); border: 1px solid var(--ligne); border-radius: .75rem; padding: .55rem .75rem; font-size: .78rem; color: var(--texte-doux); }
+.modele-gd .col-photo { min-height: 230px; }
+
+/* Assistant « Créer » */
+.etapes { list-style: none; display: flex; gap: .5rem; padding: 0; margin: 0 0 2rem; overflow-x: auto; scrollbar-width: none; }
+.etapes::-webkit-scrollbar { display: none; }
+.etapes a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; padding: 0 1rem 0 .5rem; border-radius: 999px; background: var(--carte); border: 1px solid var(--ligne); color: var(--texte-doux); text-decoration: none; font-size: .8rem; font-weight: 600; white-space: nowrap; }
+.etapes a:hover { border-color: rgba(229,193,88,.5); color: var(--or-clair); }
+.etapes span { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--degrade-or); color: var(--obsidienne); font-weight: 700; font-size: .8rem; }
+
+.atelier { display: grid; gap: 1.5rem; align-items: start; }
+.panneau { background: var(--carte); border: 1px solid rgba(27,71,56,.8); border-radius: 1rem; padding: 1.25rem; gap: 1rem; box-shadow: 0 12px 30px rgba(0,0,0,.5); scroll-margin-top: 80px; }
+.titre-etape { display: flex; align-items: center; gap: .75rem; font-family: var(--police-titre); font-size: 1.4rem; font-weight: 700; color: #fff; padding: 0; margin-bottom: .5rem; }
+.titre-etape .rond { width: 34px; height: 34px; font-size: 1rem; }
+.sous-titre { font-family: var(--police-titre); font-size: 1.15rem; font-weight: 700; color: var(--or-clair); margin: .75rem 0 0; }
+.choix-col { grid-template-columns: 1fr !important; }
+.choix-col label { border-radius: .75rem; }
+.deux-col { display: grid; gap: 1rem; }
+.apercu { display: grid; gap: .75rem; justify-items: center; }
+.apercu .carton { width: min(295px, 100%); }
+.apercu .carton-milieu h2 { overflow-wrap: anywhere; }
+.apercu .carton-milieu p { font-size: .8rem; overflow-wrap: anywhere; }
+
+.recap { background: var(--sombre); border: 1px solid rgba(229,193,88,.3); border-radius: 1rem; padding: 1rem 1.1rem; display: grid; gap: .4rem; }
+.recap-ligne { display: flex; justify-content: space-between; gap: 1rem; color: var(--texte-doux); font-variant-numeric: tabular-nums; }
+.recap-ligne[hidden] { display: none; }
+.recap-ligne strong { color: var(--or-clair); }
+.recap-total { border-top: 1px solid var(--ligne); padding-top: .5rem; color: var(--texte); font-weight: 700; font-size: 1.05rem; }
+
+/* Contact */
+.tel-groupe { display: grid; grid-template-columns: 7.5rem 1fr; gap: .5rem; }
+a.carte:hover { border-color: rgba(229,193,88,.5); }
+.carte[hidden], a.carte[hidden] { display: none; }
+
+@media (min-width: 720px) {
+  .deux-col { grid-template-columns: 1fr 1fr; }
+  .choix-col { grid-template-columns: 1fr !important; }
+}
+@media (min-width: 960px) {
+  .atelier { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  .apercu { position: sticky; top: 90px; }
+  .panneau { padding: 1.75rem; }
+}
+
+/* Évite qu'un champ (date, téléphone) élargisse la page sur petit écran */
+.atelier > *, .formulaire, .champ, .deux-col > * { min-width: 0; }
+input, select, textarea { min-width: 0; max-width: 100%; }

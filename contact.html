@@ -31,26 +31,73 @@
   <main id="contenu">
 
     <section>
-      <div class="conteneur" style="max-width:44rem">
-        <div class="entete-section">
-          <span class="surtitre">Nous joindre</span>
-          <h1>Parlons de votre <span class="script">fête</span></h1>
-          <p class="doux">Le plus simple est de nous écrire sur WhatsApp. Nous vous répondons avec une proposition adaptée.</p>
+      <div class="conteneur">
+        <div class="entete-section" style="text-align:center;margin-inline:auto">
+          <span class="badge">Nous vous accompagnons</span>
+          <h1>Parlons de votre <span class="script">célébration</span></h1>
+          <p class="doux">Notre studio vous accompagne à chaque étape pour annoncer votre fête avec élégance.</p>
         </div>
 
-        <div class="grille">
+        <div class="grille grille-3">
           <div class="carte">
+            <span class="surtitre">Canal instantané</span>
             <h3>WhatsApp</h3>
-            <p class="doux">Pour une question, un devis ou une demande de création.</p>
-            <a class="btn btn-or btn-bloc" data-wa="Bonjour Ndaje, j'aimerais avoir des informations.">Écrire sur WhatsApp</a>
+            <p class="doux">Échangez directement avec nous pour la création de votre invitation.</p>
+            <a class="btn btn-or btn-bloc" data-wa="Bonjour Ndaje, j'aimerais avoir des informations.">Écrire sur WhatsApp <span aria-hidden="true">→</span></a>
           </div>
-          <div class="carte" data-email-carte>
-            <h3>Demande détaillée</h3>
-            <p class="doux">Vous préférez tout nous dire d'un coup ? Remplissez le formulaire de demande.</p>
-            <a class="btn btn-contour btn-bloc" href="creer.html">Créer mon invitation</a>
+          <a class="carte" data-cfg="telephone" style="text-decoration:none">
+            <span class="surtitre">Appel direct</span>
+            <h3 data-cfg-texte></h3>
+            <p class="doux" data-cfg="horaires" data-cfg-texte></p>
+          </a>
+          <div class="carte" data-cfg="ville">
+            <span class="surtitre">Studio</span>
+            <h3 data-cfg-texte></h3>
+            <p class="doux">Sur rendez-vous.</p>
           </div>
-          <a class="carte" data-email style="text-decoration:none"><h3>E-mail</h3><p class="doux" data-email-texte></p></a>
+          <a class="carte" data-email style="text-decoration:none"><span class="surtitre">E-mail</span><h3 data-email-texte></h3></a>
         </div>
+      </div>
+    </section>
+
+    <section class="bande">
+      <div class="conteneur" style="max-width:44rem">
+        <div class="entete-section">
+          <span class="surtitre">Demande personnalisée</span>
+          <h2>Confiez-nous votre <span class="script">célébration</span></h2>
+          <p class="doux">Complétez ce court formulaire. Il s'ouvre dans WhatsApp et vous l'envoyez vous-même : rien n'est enregistré sur ce site.</p>
+        </div>
+        <form id="form-contact" class="formulaire" novalidate>
+          <fieldset class="champ">
+            <legend>Nature de la célébration</legend>
+            <div class="choix">
+              <label><input type="radio" name="type" value="Mariage" checked><span>Mariage</span></label>
+              <label><input type="radio" name="type" value="Baptême"><span>Baptême</span></label>
+              <label><input type="radio" name="type" value="Anniversaire"><span>Anniversaire</span></label>
+              <label><input type="radio" name="type" value="Entreprise"><span>Entreprise</span></label>
+            </div>
+          </fieldset>
+          <div class="champ"><label for="c-nom">Votre nom et prénom</label><input id="c-nom" name="noms" type="text" autocomplete="name" required></div>
+          <div class="champ">
+            <label for="c-tel">Votre numéro WhatsApp</label>
+            <div class="tel-groupe">
+              <select id="c-indicatif" name="indicatif" aria-label="Indicatif du pays">
+                <option value="+221">+221 (SN)</option><option value="+33">+33 (FR)</option><option value="+1">+1 (USA/CA)</option><option value="+225">+225 (CI)</option><option value="+32">+32 (BE)</option><option value="+44">+44 (UK)</option>
+              </select>
+              <input id="c-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="77 000 00 00" required>
+            </div>
+          </div>
+          <div class="deux-col">
+            <div class="champ"><label for="c-date">Date de l'événement</label><input id="c-date" name="date" type="date"></div>
+            <div class="champ">
+              <label for="c-invites">Nombre d'invités estimé</label>
+              <select id="c-invites" name="invites"><option value="">Je ne sais pas encore</option><option>Moins de 100</option><option>100 à 300</option><option>300 à 500</option><option>Plus de 500</option></select>
+            </div>
+          </div>
+          <div class="champ"><label for="c-souhaits">Souhaits particuliers</label><textarea id="c-souhaits" name="souhaits" placeholder="Ex. version wolof, cagnotte Wave ou Orange Money, couleurs…"></textarea></div>
+          <p class="erreur" id="erreur-contact" role="alert"></p>
+          <button class="btn btn-or btn-bloc btn-large" type="submit">Transmettre ma demande <span aria-hidden="true">→</span></button>
+        </form>
       </div>
     </section>
 
@@ -58,12 +105,22 @@
       <div class="conteneur" style="max-width:48rem">
         <div class="entete-section">
           <span class="surtitre">Questions fréquentes</span>
-          <h2>Bon à savoir</h2>
+          <h2>L'expérience <span class="script">Ndaje</span></h2>
         </div>
-        <details><summary>Comment commander ?</summary><p>Écrivez-nous sur WhatsApp ou remplissez le formulaire de demande. Nous confirmons la formule, la date de livraison et les informations à nous envoyer.</p></details>
-        <details><summary>Que dois-je préparer ?</summary><p>Les noms, la date, le programme avec les lieux, le numéro Wave ou Orange Money pour la cagnotte, et quelques photos si vous le souhaitez.</p></details>
-        <details><summary>L'argent de la cagnotte passe-t-il par Ndaje ?</summary><p>Jamais. Les invités envoient l'argent directement sur le numéro que vous nous donnez. Ndaje ne l'encaisse pas et n'en garde rien.</p></details>
-        <details><summary>Peut-on avoir l'invitation en wolof ?</summary><p>Oui, en option. Nous faisons relire les textes wolof avant la livraison.</p></details>
+        <details><summary>Comment se passe la livraison de mon invitation ?</summary><p>Une fois votre invitation validée avec vous, vous recevez un lien à partager sur WhatsApp, par SMS ou sur les réseaux sociaux.</p></details>
+        <details><summary>Puis-je modifier les informations après l'envoi ?</summary><p>Oui. Dites-nous ce qui change (horaire, lieu, itinéraire) : le lien reste le même et affiche la nouvelle version, sans que vos invités aient besoin d'un nouveau lien.</p></details>
+        <details><summary>Comment les proches à l'étranger participent-ils à la cagnotte ?</summary><p>La cagnotte affiche les numéros Wave et Orange Money que vous choisissez. Ndaje ne traite aucun paiement : l'argent va directement sur votre numéro. Pour la diaspora, écrivez-nous et nous verrons ensemble la meilleure solution.</p></details>
+        <details><summary>Quelle différence entre les formules et le sur-mesure ?</summary><p>Les formules Essentiel et Premium utilisent un modèle Ndaje avec vos textes, photos et couleurs. Le Prestige est une création sur mesure, dessinée pour votre célébration par notre infographiste.</p></details>
+        <details><summary>Quels sont les délais ?</summary><p>Essentiel en <span data-delai="essentiel"></span>, Premium en <span data-delai="premium"></span>, Prestige en <span data-delai="prestige"></span>. L'option express livre en <span data-delai="express"></span>.</p></details>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur">
+        <div class="bandeau">
+          <p class="script" style="font-size:1.6rem;margin:0">« Chaque fête mérite son invitation. »</p>
+          <p class="discret" style="margin:.75rem 0 0">Ndaje · studio sénégalais d'invitations digitales</p>
+        </div>
       </div>
     </section>
   </main>

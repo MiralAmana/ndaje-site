@@ -1,4 +1,4 @@
-/* NDAJE — site vitrine : prix, liens WhatsApp, filtre des modèles, formulaire de commande.
+/* NDAJE — site vitrine : prix, liens WhatsApp, filtre des modèles, atelier « Créer », contact.
    Aucune donnée n'est envoyée à un serveur : la demande s'ouvre dans WhatsApp. */
 (function () {
   var C = window.NDAJE_SITE || {};
@@ -86,39 +86,167 @@
     });
   });
 
-  // --- Formulaire de commande : prépare un message WhatsApp ----------------
-  var form = document.getElementById("form-commande");
-  if (form) {
-    var erreur = document.getElementById("erreur-form");
-    form.addEventListener("submit", function (e) {
+  // --- Réglages facultatifs : <el data-cfg="telephone|horaires|ville"> ------
+  // Masqué tant que la valeur n'est pas renseignée dans config.js.
+  document.querySelectorAll("[data-cfg]").forEach(function (el) {
+    var cle = el.getAttribute("data-cfg");
+    var v = C[cle];
+    if (!v) { el.hidden = true; return; }
+    var t = el.hasAttribute("data-cfg-texte") ? el : el.querySelector("[data-cfg-texte]");
+    if (t) t.textContent = v;
+    if (cle === "telephone" && el.tagName === "A") el.href = "tel:" + String(v).replace(/[^\d+]/g, "");
+  });
+
+  // --- Outils pour les formulaires -----------------------------------------
+  function dateFr(v) {
+    if (!v) return "";
+    var d = new Date(v + "T12:00:00");
+    return isNaN(d.getTime()) ? "" : d.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+  }
+  function sansAccent(s) {
+    return String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+  function envoyerWhatsApp(lignes) {
+    var url = lienWhatsApp(lignes.join("\n"));
+    if (url) window.open(url, "_blank", "noopener");
+    else montrerAvis("Le numéro WhatsApp sera bientôt disponible.");
+  }
+  function valeur(form, nom) {
+    var el = form.elements[nom];
+    return el && el.value ? String(el.value).trim() : "";
+  }
+
+  // --- Atelier « Créer » : aperçu en direct, total estimé, message WhatsApp --
+  var creer = document.getElementById("form-creer");
+  if (creer) {
+    var cleFormule = { Essentiel: "essentiel", Premium: "premium", Prestige: "prestige" };
+    var params = new URLSearchParams(window.location.search);
+
+    var typeUrl = params.get("type");
+    if (typeUrl) {
+      creer.querySelectorAll("input[name=type]").forEach(function (r) {
+        if (sansAccent(r.value) === sansAccent(typeUrl)) r.checked = true;
+      });
+    }
+    var formuleUrl = params.get("formule");
+    if (formuleUrl && cleFormule[formuleUrl]) creer.elements.formule.value = formuleUrl;
+
+    var caseCagnotte = document.getElementById("cagnotte");
+    var champsCagnotte = document.getElementById("champs-cagnotte");
+    var erreurCreer = document.getElementById("erreur-form");
+
+    var initiales = function (noms) {
+      var parties = noms.split(/\s*(?:&|\+|,|\bet\b)\s*/i).filter(function (p) { return p.trim(); });
+      if (!parties.length) return "N";
+      return parties.slice(0, 2).map(function (p) { return p.trim().charAt(0).toUpperCase(); }).join("&");
+    };
+    var choisi = function (nom) {
+      var r = creer.querySelector("input[name=" + nom + "]:checked");
+      return r ? r.value : "";
+    };
+
+    function totalCommande() {
+      var cle = cleFormule[creer.elements.formule.value] || "premium";
+      var base = prix[cle] || 0;
+      var supplements = 0;
+      var noms = [];
+      if (choisi("langue") === "Français et wolof") { supplements += prix.optionWolof || 0; noms.push("Version wolof"); }
+      creer.querySelectorAll("input[data-opt]:checked").forEach(function (c) {
+        supplements += prix[c.getAttribute("data-opt")] || 0;
+        noms.push(c.value);
+      });
+      return { cle: cle, base: base, supplements: supplements, total: base + supplements, options: noms };
+    }
+
+    function maj() {
+      var noms = valeur(creer, "noms");
+      document.getElementById("ap-noms").textContent = noms || "Vos noms";
+      document.getElementById("ap-sceau").textContent = initiales(noms);
+      document.getElementById("ap-type").textContent = choisi("type");
+      var d = dateFr(valeur(creer, "date"));
+      var h = valeur(creer, "heure");
+      document.getElementById("ap-date").textContent = d ? d.charAt(0).toUpperCase() + d.slice(1) + (h ? " · " + h : "") : "Date de la célébration";
+      document.getElementById("ap-lieu").textContent = valeur(creer, "lieu") || "Lieu de la réception";
+
+      champsCagnotte.hidden = !caseCagnotte.checked;
+
+      var t = totalCommande();
+      document.getElementById("recap-formule").textContent = creer.elements.formule.value;
+      document.getElementById("recap-prix").textContent = fcfa(t.base);
+      document.getElementById("recap-options").hidden = t.supplements === 0;
+      document.getElementById("recap-opt-prix").textContent = "+" + fcfa(t.supplements);
+      document.getElementById("recap-total").textContent = fcfa(t.total);
+      var delai = delais[t.cle] || "";
+      if (creer.querySelector("input[data-opt=optionExpress]:checked") && delais.express) delai = delais.express;
+      document.getElementById("recap-delai").textContent = delai;
+    }
+    creer.addEventListener("input", maj);
+    creer.addEventListener("change", maj);
+    maj();
+
+    creer.addEventListener("submit", function (e) {
       e.preventDefault();
-      var d = new FormData(form);
-      var nom = String(d.get("noms") || "").trim();
-      var tel = String(d.get("tel") || "").trim();
-      if (!nom || !tel) {
-        erreur.textContent = "Merci d'indiquer les noms et votre numéro WhatsApp.";
+      var noms = valeur(creer, "noms");
+      var tel = valeur(creer, "tel");
+      if (!noms || !tel) {
+        erreurCreer.textContent = "Merci d'indiquer les noms et votre numéro WhatsApp.";
         return;
       }
-      erreur.textContent = "";
-      var options = d.getAll("option").join(", ") || "aucune";
-      var lignes = [
-        "Bonjour Ndaje, je souhaite une invitation.",
-        "Type de cérémonie : " + (d.get("type") || "non précisé"),
-        "Noms / hôtes : " + nom,
-        "Date : " + (d.get("date") || "à préciser"),
-        "Invités estimés : " + (d.get("invites") || "à préciser"),
-        "Formule : " + (d.get("formule") || "à conseiller"),
-        "Options : " + options,
-        "Mon numéro WhatsApp : " + tel
+      erreurCreer.textContent = "";
+      var t = totalCommande();
+      var date = dateFr(valeur(creer, "date"));
+      var l = [
+        "Bonjour Ndaje, je souhaite créer une invitation.",
+        "Modèle : " + choisi("modele"),
+        "Type : " + choisi("type"),
+        "Noms / hôtes : " + noms,
+        "Date : " + (date || "à préciser") + (valeur(creer, "heure") ? " à " + valeur(creer, "heure") : ""),
+        "Lieu : " + (valeur(creer, "lieu") || "à préciser")
       ];
-      var souhaits = String(d.get("souhaits") || "").trim();
-      if (souhaits) lignes.push("Souhaits : " + souhaits);
-      var url = lienWhatsApp(lignes.join("\n"));
-      if (url) {
-        window.open(url, "_blank", "noopener");
+      if (valeur(creer, "programme")) l.push("Programme : " + valeur(creer, "programme"));
+      l.push("Langue : " + choisi("langue"));
+      if (caseCagnotte.checked) {
+        l.push("Cagnotte : oui (titulaire " + (valeur(creer, "titulaire") || "à préciser") +
+          ", Wave " + (valeur(creer, "wave") || "-") + ", Orange Money " + (valeur(creer, "om") || "-") + ")");
       } else {
-        montrerAvis("Le numéro WhatsApp sera bientôt disponible.");
+        l.push("Cagnotte : non");
       }
+      l.push("Réponses : max " + valeur(creer, "maxp") + " personnes" +
+        (valeur(creer, "limite") ? ", avant le " + dateFr(valeur(creer, "limite")) : ""));
+      l.push("Musique : " + choisi("musique"));
+      l.push("Formule : " + creer.elements.formule.value + " (" + fcfa(t.base) + " FCFA)");
+      if (t.options.length) l.push("Options : " + t.options.join(", ") + " (+" + fcfa(t.supplements) + " FCFA)");
+      l.push("Total estimé : " + fcfa(t.total) + " FCFA");
+      l.push("Mon numéro WhatsApp : " + tel);
+      if (valeur(creer, "souhaits")) l.push("Souhaits : " + valeur(creer, "souhaits"));
+      envoyerWhatsApp(l);
+    });
+  }
+
+  // --- Page Contact : demande personnalisée ----------------------------------
+  var contactForm = document.getElementById("form-contact");
+  if (contactForm) {
+    var erreurContact = document.getElementById("erreur-contact");
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nom = valeur(contactForm, "noms");
+      var tel = valeur(contactForm, "tel");
+      if (!nom || !tel) {
+        erreurContact.textContent = "Merci d'indiquer votre nom et votre numéro WhatsApp.";
+        return;
+      }
+      erreurContact.textContent = "";
+      var type = contactForm.querySelector("input[name=type]:checked");
+      var l = [
+        "Bonjour Ndaje, je vous contacte depuis le site.",
+        "Célébration : " + (type ? type.value : "non précisée"),
+        "Nom : " + nom,
+        "Mon numéro WhatsApp : " + valeur(contactForm, "indicatif") + " " + tel,
+        "Date : " + (dateFr(valeur(contactForm, "date")) || "à préciser"),
+        "Invités estimés : " + (valeur(contactForm, "invites") || "à préciser")
+      ];
+      if (valeur(contactForm, "souhaits")) l.push("Souhaits : " + valeur(contactForm, "souhaits"));
+      envoyerWhatsApp(l);
     });
   }
 

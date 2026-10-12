@@ -16,6 +16,11 @@ window.NDAJE_SITE = {
   // Adresse e-mail de contact (laisser "" pour la masquer).
   email: "",
 
+  // Facultatif : s'affichent sur la page Contact seulement s'ils sont renseignés.
+  telephone: "",   // ex. "+221 77 000 00 00" (appel direct)
+  horaires: "",    // ex. "8h30 - 22h00"
+  ville: "",       // ex. "Dakar, Sénégal" (adresse du studio)
+
   // Prix en FCFA (affichés partout sur le site).
   prix: {
     essentiel: 20000,
