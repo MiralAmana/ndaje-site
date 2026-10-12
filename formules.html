@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formules et tarifs — Ndaje</title>
+  <meta name="description" content="Essentiel, Premium, Prestige : les formules d'invitation digitale Ndaje, avec des prix clairs en FCFA et un paiement unique par événement.">
+  <meta name="theme-color" content="#0E0D0B">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Formules et tarifs — Ndaje">
+  <meta property="og:description" content="Essentiel, Premium, Prestige : les formules d'invitation digitale Ndaje, avec des prix clairs en FCFA et un paiement unique par événement.">
+  <!-- À AJOUTER quand le domaine et le logo seront prêts : og:url et og:image en adresse complète (https://…) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="index.html" aria-label="Ndaje, accueil">
+        <!-- LOGO : remplacer le contenu de .logo-vide par <img src="assets/logo.svg" alt=""> quand il sera livré -->
+        <span class="logo-vide" aria-hidden="true"></span>Ndaje
+      </a>
+      <nav class="menu" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="modeles.html">Modèles</a><a href="formules.html" aria-current="page">Formules</a><a href="contact.html">Contact</a></nav>
+      <a class="btn btn-or" href="creer.html">Créer mon invitation</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section>
+      <div class="conteneur">
+        <div class="entete-section">
+          <span class="surtitre">Tarifs clairs</span>
+          <h1>Les formules <span class="script">Ndaje</span></h1>
+          <p class="doux">Vous payez une seule fois par événement, sans abonnement. Vos invités ne paient jamais.</p>
+        </div>
+
+        <div class="grille grille-3">
+          <div class="carte formule">
+            <h3>Essentiel</h3>
+            <div class="prix"><span data-prix="essentiel"></span> <small>FCFA</small></div>
+            <p class="delai">Livré en <span data-delai="essentiel"></span></p>
+            <ul class="puces">
+              <li>Page web personnalisée, adaptée au téléphone</li>
+              <li>Partage direct sur WhatsApp</li>
+              <li>Confirmation de présence (RSVP)</li>
+              <li>Cagnotte Wave et Orange Money</li>
+              <li>Programme avec itinéraire Google Maps</li>
+            </ul>
+            <a class="btn btn-contour btn-bloc" data-wa="Bonjour Ndaje, je choisis la formule Essentiel.">Choisir l'Essentiel</a>
+          </div>
+
+          <div class="carte formule formule-vedette">
+            <span class="etiquette">Le choix des mariés</span>
+            <h3>Premium</h3>
+            <div class="prix"><span data-prix="premium"></span> <small>FCFA</small></div>
+            <p class="delai">Livré en <span data-delai="premium"></span></p>
+            <ul class="puces">
+              <li>Tout l'Essentiel</li>
+              <li>Galerie photo</li>
+              <li>Musique d'ambiance (optionnelle)</li>
+              <li>Compte à rebours jusqu'à la fête</li>
+              <li>Tableau de bord privé et export pour le traiteur</li>
+            </ul>
+            <a class="btn btn-or btn-bloc" data-wa="Bonjour Ndaje, je choisis la formule Premium.">Choisir le Premium</a>
+          </div>
+
+          <div class="carte formule">
+            <h3>Prestige</h3>
+            <div class="prix"><span data-prix="prestige"></span> <small>FCFA</small></div>
+            <p class="delai">Livré en <span data-delai="prestige"></span></p>
+            <ul class="puces">
+              <li>Tout le Premium</li>
+              <li>Création sur mesure, dessinée pour vous</li>
+              <li>Accompagnement personnalisé</li>
+            </ul>
+            <a class="btn btn-contour btn-bloc" data-wa="Bonjour Ndaje, je souhaite un devis pour la formule Prestige.">Demander un devis</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur">
+        <div class="entete-section">
+          <span class="surtitre">À la carte</span>
+          <h2>Options</h2>
+        </div>
+        <div class="options">
+          <div class="option"><div><h3 style="margin:0">Version wolof</h3><span class="discret">Textes en français et en wolof</span></div><strong>+<span data-prix="optionWolof"></span> F</strong></div>
+          <div class="option"><div><h3 style="margin:0">Express</h3><span class="discret">Livraison en <span data-delai="express"></span></span></div><strong>+<span data-prix="optionExpress"></span> F</strong></div>
+          <div class="option"><div><h3 style="margin:0">QR Pass</h3><span class="discret">Contrôle d'entrée par QR code</span></div><strong>+<span data-prix="optionQrPass"></span> F</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur">
+        <div class="entete-section">
+          <span class="surtitre">En un coup d'œil</span>
+          <h2>Comparatif</h2>
+        </div>
+        <div class="defile">
+          <table>
+            <thead><tr><th scope="col">Prestation</th><th scope="col">Essentiel</th><th scope="col">Premium</th><th scope="col">Prestige</th></tr></thead>
+            <tbody>
+              <tr><td>Page web et RSVP</td><td class="oui">Oui</td><td class="oui">Oui</td><td class="oui">Oui</td></tr>
+              <tr><td>Cagnotte Wave et Orange Money</td><td class="oui">Oui</td><td class="oui">Oui</td><td class="oui">Oui</td></tr>
+              <tr><td>Galerie photo et musique</td><td class="non">Non</td><td class="oui">Oui</td><td class="oui">Oui</td></tr>
+              <tr><td>Tableau de bord et export</td><td class="non">Non</td><td class="oui">Oui</td><td class="oui">Oui</td></tr>
+              <tr><td>Création sur mesure</td><td class="non">Non</td><td class="non">Non</td><td class="oui">Oui</td></tr>
+              <tr><td>Version wolof</td><td>Option</td><td>Option</td><td>Option</td></tr>
+              <tr><td>QR Pass</td><td>Option</td><td>Option</td><td>Option</td></tr>
+              <tr><td>Délai</td><td data-delai="essentiel"></td><td data-delai="premium"></td><td data-delai="prestige"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur">
+        <div class="grille grille-3">
+          <div class="carte"><h3>0 % de commission</h3><p class="doux">L'argent de votre cagnotte va directement sur votre numéro.</p></div>
+          <div class="carte"><h3>Paiement unique</h3><p class="doux">Un seul règlement par événement, sans abonnement.</p></div>
+          <div class="carte"><h3>Livraison rapide</h3><p class="doux">De <span data-delai="express"></span> en option express, à <span data-delai="prestige"></span> pour la formule Prestige.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur">
+        <div class="bandeau">
+          <h2>Offrez à votre fête son <span class="script">invitation</span></h2>
+          <p class="doux">Dites-nous votre cérémonie, nous préparons le reste.</p>
+          <div class="groupe-btn" style="justify-content:center">
+            <a class="btn btn-or" href="creer.html">Créer mon invitation</a>
+            <a class="btn btn-contour" data-wa="Bonjour Ndaje, j'aimerais discuter de mon invitation.">Écrire sur WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div>
+        <strong>Ndaje</strong> · <span class="script">Chaque fête mérite son invitation</span><br>
+        Studio d'invitations digitales, Sénégal. © <span data-annee>2026</span> Ndaje
+      </div>
+      <nav aria-label="Pied de page">
+        <a href="modeles.html">Modèles</a><a href="formules.html">Formules</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <a class="flottant" data-wa="Bonjour Ndaje, j'ai une question sur vos invitations.">WhatsApp</a>
+  <div class="avis" id="avis" role="status" hidden></div>
+  <nav class="barre-bas" aria-label="Navigation mobile"><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Accueil</a><a href="modeles.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Modèles</a><a href="creer.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Créer</a><a href="formules.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l4 4 5-7 5 7 4-4-2 12H5z"/></svg>Formules</a><a href="contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a></nav>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Ndaje</title>
+  <meta name="description" content="Contactez Ndaje par WhatsApp pour votre invitation digitale : mariage, baptême, anniversaire ou événement d'entreprise.">
+  <meta name="theme-color" content="#0E0D0B">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact — Ndaje">
+  <meta property="og:description" content="Contactez Ndaje par WhatsApp pour votre invitation digitale : mariage, baptême, anniversaire ou événement d'entreprise.">
+  <!-- À AJOUTER quand le domaine et le logo seront prêts : og:url et og:image en adresse complète (https://…) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="index.html" aria-label="Ndaje, accueil">
+        <!-- LOGO : remplacer le contenu de .logo-vide par <img src="assets/logo.svg" alt=""> quand il sera livré -->
+        <span class="logo-vide" aria-hidden="true"></span>Ndaje
+      </a>
+      <nav class="menu" aria-label="Navigation principale"><a href="index.html">Accueil</a><a href="modeles.html">Modèles</a><a href="formules.html">Formules</a><a href="contact.html" aria-current="page">Contact</a></nav>
+      <a class="btn btn-or" href="creer.html">Créer mon invitation</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section>
+      <div class="conteneur" style="max-width:44rem">
+        <div class="entete-section">
+          <span class="surtitre">Nous joindre</span>
+          <h1>Parlons de votre <span class="script">fête</span></h1>
+          <p class="doux">Le plus simple est de nous écrire sur WhatsApp. Nous vous répondons avec une proposition adaptée.</p>
+        </div>
+
+        <div class="grille">
+          <div class="carte">
+            <h3>WhatsApp</h3>
+            <p class="doux">Pour une question, un devis ou une demande de création.</p>
+            <a class="btn btn-or btn-bloc" data-wa="Bonjour Ndaje, j'aimerais avoir des informations.">Écrire sur WhatsApp</a>
+          </div>
+          <div class="carte" data-email-carte>
+            <h3>Demande détaillée</h3>
+            <p class="doux">Vous préférez tout nous dire d'un coup ? Remplissez le formulaire de demande.</p>
+            <a class="btn btn-contour btn-bloc" href="creer.html">Créer mon invitation</a>
+          </div>
+          <a class="carte" data-email style="text-decoration:none"><h3>E-mail</h3><p class="doux" data-email-texte></p></a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="conteneur" style="max-width:48rem">
+        <div class="entete-section">
+          <span class="surtitre">Questions fréquentes</span>
+          <h2>Bon à savoir</h2>
+        </div>
+        <details><summary>Comment commander ?</summary><p>Écrivez-nous sur WhatsApp ou remplissez le formulaire de demande. Nous confirmons la formule, la date de livraison et les informations à nous envoyer.</p></details>
+        <details><summary>Que dois-je préparer ?</summary><p>Les noms, la date, le programme avec les lieux, le numéro Wave ou Orange Money pour la cagnotte, et quelques photos si vous le souhaitez.</p></details>
+        <details><summary>L'argent de la cagnotte passe-t-il par Ndaje ?</summary><p>Jamais. Les invités envoient l'argent directement sur le numéro que vous nous donnez. Ndaje ne l'encaisse pas et n'en garde rien.</p></details>
+        <details><summary>Peut-on avoir l'invitation en wolof ?</summary><p>Oui, en option. Nous faisons relire les textes wolof avant la livraison.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div>
+        <strong>Ndaje</strong> · <span class="script">Chaque fête mérite son invitation</span><br>
+        Studio d'invitations digitales, Sénégal. © <span data-annee>2026</span> Ndaje
+      </div>
+      <nav aria-label="Pied de page">
+        <a href="modeles.html">Modèles</a><a href="formules.html">Formules</a><a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <a class="flottant" data-wa="Bonjour Ndaje, j'ai une question sur vos invitations.">WhatsApp</a>
+  <div class="avis" id="avis" role="status" hidden></div>
+  <nav class="barre-bas" aria-label="Navigation mobile"><a href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Accueil</a><a href="modeles.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Modèles</a><a href="creer.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Créer</a><a href="formules.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l4 4 5-7 5 7 4-4-2 12H5z"/></svg>Formules</a><a href="contact.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a></nav>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<title>Contact &amp; Conciergerie   Ndaje — Ndajé Dakar</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&amp;family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-fixed-variant": "#633f03",
+            "primary-fixed": "#ffe088",
+            "on-tertiary-fixed-variant": "#1d4f40",
+            "primary-fixed-dim": "#e9c349",
+            "tertiary-fixed": "#baeed9",
+            "inverse-surface": "#e6e2de",
+            "on-secondary-fixed": "#2a1800",
+            "secondary-fixed-dim": "#f3bd78",
+            "surface-dim": "#141311",
+            "surface-container-lowest": "#0f0e0c",
+            "inverse-primary": "#735c00",
+            "surface-container-low": "#1d1b19",
+            "on-error": "#690005",
+            "secondary-fixed": "#ffddb5",
+            "on-secondary-container": "#e3af6b",
+            "inverse-on-surface": "#32302e",
+            "on-surface": "#e6e2de",
+            "surface-tint": "#e9c349",
+            "on-surface-variant": "#d0c5af",
+            "on-tertiary-fixed": "#002117",
+            "on-primary": "#3c2f00",
+            "outline": "#99907c",
+            "primary-container": "#d4af37",
+            "secondary-container": "#664105",
+            "error": "#ffb4ab",
+            "on-background": "#e6e2de",
+            "surface-container-highest": "#363432",
+            "surface-variant": "#363432",
+            "secondary": "#f3bd78",
+            "surface": "#141311",
+            "on-tertiary": "#00382a",
+            "error-container": "#93000a",
+            "on-primary-container": "#554300",
+            "tertiary-container": "#8bbdaa",
+            "on-primary-fixed-variant": "#574500",
+            "on-tertiary-container": "#1b4d3e",
+            "surface-container": "#211f1d",
+            "surface-container-high": "#2b2a27",
+            "on-primary-fixed": "#241a00",
+            "surface-bright": "#3b3936",
+            "tertiary-fixed-dim": "#9ed1bd",
+            "primary": "#f2ca50",
+            "outline-variant": "#4d4635",
+            "background": "#141311",
+            "on-secondary": "#462b00",
+            "tertiary": "#a6d9c5",
+            "on-error-container": "#ffdad6"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-2xl": "4rem",
+            "margin-tablet": "2rem",
+            "margin": "1.25rem",
+            "space-xl": "2.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-desktop": "2rem",
+            "gutter-tablet": "1.5rem",
+            "margin-desktop": "3rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem"
+          },
+          fontFamily: {
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Outfit"],
+            "display-hero-mobile": ["Outfit"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero": ["Outfit"],
+            "headline-lg-mobile": ["Outfit"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Outfit"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-sm": ["Outfit"],
+            "serif": ["'Cormorant Garamond'", "serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #141311;
+        color: #e6e2de;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+    ::-webkit-scrollbar { display: none; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .gold-gradient {
+      background: linear-gradient(135deg, #f2ca50 0%, #d4af37 50%, #f3bd78 100%);
+    }
+    .gold-text {
+      background: linear-gradient(135deg, #ffe088 0%, #f2ca50 50%, #d4af37 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .palace-blur {
+      background: rgba(20, 19, 17, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface antialiased flex flex-col min-h-screen relative selection:bg-primary selection:text-on-primary">
+<!-- TOP APP BAR -->
+<header class="fixed top-0 w-full z-50 pt-safe palace-blur shadow-[0_4px_24px_rgba(0,0,0,0.65)]">
+<div class="h-16 px-4 flex items-center justify-between">
+<!-- Brand Logo / Monogram -->
+<div class="flex items-center gap-2.5">
+<div class="relative w-9 h-9 rounded-full p-[1.5px] gold-gradient shadow-[0_0_12px_rgba(242,202,80,0.3)]">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center overflow-hidden p-1">
+<img alt="Ndajé Monogramme" class="h-full w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDav6jdkaR_29EZ229-6O8ycaZrUSWeBCn98F8NMvh_9XQA-j9k4G94ZNcyx57BIYsy97PG5lNRlv0W6fv7UO4XFpYOrYAOo-tAspZuEmkZKOfy6UcpuIKCM69miHEipYL7P8i_R_Y0p3KTdt925V9jWvxLW5o5UWA9VH0lHFg13lcqCxc49XR3_t9cFwOC3BGfUmr1fRlXBqvHYo4DwQbHgoe9xp6qFHRUvGRFlzW3grO2I6fVRRaQ8U_BYIJg46YU4g"/>
+</div>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="font-serif font-bold text-2xl tracking-wide text-on-surface leading-none">Ndajé</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_6px_#f2ca50]"></span>
+</div>
+</div>
+<!-- Header Actions: FR/WO Lang Switcher + Conciergerie CTA -->
+<div class="flex items-center gap-2">
+<!-- Lang Switcher -->
+<div class="flex items-center p-0.5 rounded-full bg-surface-container border border-outline-variant/40">
+<button class="px-2.5 py-1 rounded-full font-label-sm text-[10px] bg-primary text-on-primary shadow-sm transition-all" type="button">FR</button>
+<button class="px-2 py-1 rounded-full font-label-sm text-[10px] text-on-surface-variant hover:text-primary transition-colors" type="button">WO</button>
+</div>
+<!-- Conciergerie Button -->
+<a aria-label="Conciergerie Ndajé" class="h-9 px-3 rounded-full bg-surface-container border border-outline-variant/50 hover:border-primary/60 flex items-center gap-1.5 text-primary hover:text-primary-fixed transition-all shadow-[0_0_12px_rgba(242,202,80,0.15)]" href="https://wa.me/221770000000" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px]">forum</span>
+<span class="font-label-sm text-[11px] uppercase tracking-wider hidden sm:inline">Conciergerie</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT SLOT -->
+<main class="flex flex-col relative w-full pt-16 pb-28 min-h-screen">
+<div class="flex flex-col w-full text-on-surface">
+<!-- HERO EDITORIAL & PRESTIGE BADGE -->
+<section class="relative px-margin pt-4 pb-8 flex flex-col items-center text-center">
+<!-- Ambient emerald-gold radiance aura -->
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 w-72 h-44 bg-gradient-to-b from-primary/15 via-tertiary-container/10 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<!-- Availability & Reach Pill -->
+<div class="relative inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high shadow-md shadow-black/40 mb-5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">Disponibilité 7j/7 • Dakar &amp; Diaspora</span>
+</div>
+<!-- Page Title & Editorial Strapline -->
+<h1 class="font-serif italic text-4xl sm:text-5xl font-medium tracking-tight text-on-surface mb-3 leading-tight">
+      La Conciergerie <span class="not-italic font-serif font-bold gold-text">Ndajé</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm sm:max-w-md mx-auto leading-relaxed">
+      Notre atelier d’orfèvre digital vous accompagne à chaque étape pour magnifier l’annonce de votre célébration la plus précieuse.
+    </p>
+<!-- Senegalese Serr Geometric Filigree Node Divider -->
+<div class="flex items-center justify-center gap-3 w-full max-w-xs mt-6 opacity-75">
+<div class="h-[1px] flex-1 bg-gradient-to-r from-transparent via-primary/40 to-primary"></div>
+<div class="w-1.5 h-1.5 rotate-45 bg-primary shadow-[0_0_6px_#f2ca50]"></div>
+<div class="h-[1px] flex-1 bg-gradient-to-l from-transparent via-primary/40 to-primary"></div>
+</div>
+</section>
+<!-- CANAL PRIVILÉGIÉ : CARTE WHATSAPP MAÎTRE D'ATELIER (HIGH CONVERSION) -->
+<section class="px-margin mb-8">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-low shadow-xl p-5 sm:p-6">
+<!-- Emerald-Gold velvet background nuance -->
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary-container/15 via-surface-container-lowest/80 to-surface-container pointer-events-none"></div>
+<div class="absolute -right-8 -bottom-8 w-36 h-36 rounded-full bg-primary/10 blur-2xl pointer-events-none"></div>
+<div class="relative flex flex-col gap-4">
+<!-- Badge status response -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-[19px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary font-semibold tracking-wide uppercase">Canal Instantané</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Maître d’Atelier Dédié</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-tertiary flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            &lt; 15 min
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-normal">
+          Échangez directement avec notre maître d’atelier pour la création de votre carton digital, maquette interactive en direct et réception sous 24h.
+        </p>
+<!-- CTA Direct WhatsApp Button -->
+<a class="group w-full py-3.5 px-5 rounded-full gold-gradient text-on-primary font-label-md text-label-md font-bold uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-[0_8px_24px_rgba(242,202,80,0.35)] active:scale-[0.98] transition-all" href="https://wa.me/221776452891?text=Bonjour%20la%20Maison%20Ndaj%C3%A9%2C%20je%20souhaite%20un%20accompagnement%20pour%20notre%20c%C3%A9l%C3%A9bration." rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px] font-bold">chat</span>
+<span>WhatsApp (+221 77 645 28 91)</span>
+<span class="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ACCÈS SECONDAIRES : APPEL TÉLÉPHONIQUE & ATELIER PHYSIQUE -->
+<section class="px-margin mb-10">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Carte Appel Direct -->
+<a class="flex items-center gap-3.5 p-4 rounded-xl bg-surface-container shadow-md active:scale-[0.98] transition-transform" href="tel:+221776452891">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[22px]">phone_in_talk</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">Appel Direct Atelier</p>
+<p class="font-body-sm text-body-sm text-primary truncate">+221 77 645 28 91</p>
+<span class="font-label-sm text-[10px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">schedule</span> 8h30 – 22h00 GMT
+          </span>
+</div>
+</a>
+<!-- Carte Atelier Privé Almadies -->
+<div class="flex items-center gap-3.5 p-4 rounded-xl bg-surface-container shadow-md">
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<div class="flex flex-col min-w-0">
+<p class="font-label-md text-label-md text-on-surface font-semibold truncate">Atelier Privé Almadies</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Dakar, Sénégal</p>
+<span class="font-label-sm text-[10px] text-primary-fixed flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[13px]">lock_clock</span> Sur rendez-vous exclusif
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- FORMULAIRE DE PRISE DE CONTACT & ÉCRIN SUR-MESURE -->
+<section class="px-margin mb-12">
+<div class="rounded-2xl bg-surface-container-low p-5 sm:p-7 shadow-2xl relative overflow-hidden">
+<!-- Glow ambient corner -->
+<div class="absolute -top-16 -left-16 w-40 h-40 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Section Title Inside Card -->
+<div class="relative flex flex-col mb-6">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Protocole Personnalisé</span>
+<h2 class="font-serif italic text-2xl sm:text-3xl font-medium text-on-surface mt-1">
+          Confiez-nous votre Célébration
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+          Complétez cette esquisse pour recevoir votre proposition sur-mesure et démonstration interactive.
+        </p>
+</div>
+<form class="relative flex flex-col gap-5" id="ndaje-contact-form" onsubmit="event.preventDefault(); handleSubmitNdaje();">
+<!-- Type de Projet (Chips Selector) -->
+<div class="flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider">
+            Nature de la Célébration *
+          </label>
+<div class="grid grid-cols-2 gap-2" id="project-type-group">
+<button class="project-pill active-pill py-2.5 px-3 rounded-lg bg-surface-container-high text-primary font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all text-center" data-val="Mariage / Takku Sey" type="button">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+<span>Takku Sëy • Mariage</span>
+</button>
+<button class="project-pill py-2.5 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all text-center" data-val="Baptême / Ngente" type="button">
+<span class="material-symbols-outlined text-[16px]">child_care</span>
+<span>Ngente • Baptême</span>
+</button>
+<button class="project-pill py-2.5 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all text-center" data-val="Gala &amp; VIP" type="button">
+<span class="material-symbols-outlined text-[16px]">award_star</span>
+<span>Gala &amp; VIP</span>
+</button>
+<button class="project-pill py-2.5 px-3 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center gap-1.5 transition-all text-center" data-val="Autre Célébration" type="button">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+<span>Autre Célébration</span>
+</button>
+</div>
+<input id="project_type_input" name="project_type" type="hidden" value="Mariage / Takku Sey"/>
+</div>
+<!-- Nom & Prénom -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider" for="contact-name">
+            Votre Nom &amp; Prénom *
+          </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">person</span>
+<input class="w-full bg-surface-container rounded-xl pl-11 pr-4 py-3 text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-name" name="name" placeholder="Ex: Aminata Diop &amp; Cheikh Fall" required="" type="text"/>
+</div>
+</div>
+<!-- Téléphone & WhatsApp avec Sélecteur Indicatif -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider" for="contact-phone">
+            Numéro WhatsApp Privilégié *
+          </label>
+<div class="flex gap-2">
+<!-- Indicatif Pays Selector -->
+<div class="relative shrink-0">
+<select class="h-full bg-surface-container rounded-xl pl-3 pr-7 py-3 text-on-surface font-label-md text-label-md focus:outline-none focus:bg-surface-container-high appearance-none transition-colors" id="country-code" name="country_code">
+<option value="+221">+221 (SN)</option>
+<option value="+33">+33 (FR)</option>
+<option value="+1">+1 (USA/CA)</option>
+<option value="+225">+225 (CI)</option>
+<option value="+32">+32 (BE)</option>
+<option value="+44">+44 (UK)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px] pointer-events-none">expand_more</span>
+</div>
+<!-- Input Téléphone -->
+<div class="relative flex-1 flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[19px] pointer-events-none">chat</span>
+<input class="w-full bg-surface-container rounded-xl pl-10 pr-4 py-3 text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors" id="contact-phone" name="phone" placeholder="77 000 00 00" required="" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Date Prévisionnelle & Nombre d'Invités Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+<!-- Date Prévisionnelle -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider" for="event-date">
+              Date de l’événement
+            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[19px] pointer-events-none">calendar_month</span>
+<input class="w-full bg-surface-container rounded-xl pl-11 pr-4 py-3 text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high transition-colors" id="event-date" name="date" type="date"/>
+</div>
+</div>
+<!-- Nombre d'invités estimé -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider" for="guest-count">
+              Nombre d’invités estimé
+            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[19px] pointer-events-none">groups</span>
+<select class="w-full bg-surface-container rounded-xl pl-11 pr-8 py-3 text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-high appearance-none transition-colors" id="guest-count" name="guest_count">
+<option value="intimiste">Écrin Intimiste (&lt; 100 convives)</option>
+<option selected="" value="100-300">Célébration Royale (100 – 300)</option>
+<option value="300-500">Grande Réception (300 – 500)</option>
+<option value="500plus">Prestige Souverain (500+ convives)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Besoins Particuliers / Message -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold uppercase tracking-wider" for="contact-notes">
+            Souhaits Particuliers &amp; Personnalisation
+          </label>
+<textarea class="w-full bg-surface-container rounded-xl p-3.5 text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-high transition-colors resize-none" id="contact-notes" name="notes" placeholder="Ex: Formulation en Wolof noble, intégration d'un chant traditionnel mandingue, cagnotte Wave/Orange Money pour convives de la diaspora..." rows="3"></textarea>
+</div>
+<!-- Domestic & Diaspora Payment Confidence Badge -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">verified_user</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Règlement &amp; acomptes sécurisés :</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-tertiary font-label-sm text-[10px] font-bold">Wave</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-[10px] font-bold">OM</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-label-sm text-[10px]">CB Int.</span>
+</div>
+</div>
+<!-- Submit CTA Button -->
+<button class="w-full py-4 px-6 rounded-full gold-gradient text-on-primary font-label-lg text-label-lg font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(242,202,80,0.35)] active:scale-[0.98] transition-all" id="submit-btn" type="submit">
+<span>Transmettre ma demande d’écrin</span>
+<span class="material-symbols-outlined text-[20px] font-bold">arrow_forward</span>
+</button>
+<!-- Feedback message container (hidden by default) -->
+<div class="hidden p-4 rounded-xl bg-surface-container-highest text-center" id="form-success">
+<div class="w-10 h-10 rounded-full bg-primary/20 text-primary mx-auto flex items-center justify-center mb-2">
+<span class="material-symbols-outlined">mark_email_read</span>
+</div>
+<p class="font-serif italic text-lg text-primary">Demande transmise avec honneur</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+            Votre maître d’atelier dédié vous contacte sur WhatsApp dans les 15 prochaines minutes.
+          </p>
+</div>
+</form>
+</div>
+</section>
+<!-- FAQ SPÉCIALE CONCIERGERIE (ACCORDÉONS HAUT DE GAMME) -->
+<section class="px-margin mb-12">
+<div class="flex flex-col mb-5">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Questions Fréquentes</span>
+<h2 class="font-serif italic text-2xl sm:text-3xl font-medium text-on-surface mt-1">
+        L’Expérience Invitation Ndajé
+      </h2>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Question 1 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="faq-toggle w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none" type="button">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">send_time_extension</span>
+            Comment se passe la livraison de mon carton digital ?
+          </span>
+<span class="faq-icon material-symbols-outlined text-primary text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Dès validation de votre maquette sur-mesure, vous recevez un lien privatif et luxueux à votre nom (ex. <em class="text-primary-fixed">ndaje.com/mariage-aminata-cheikh</em>) accompagné d’un visuel interactif adapté pour partage direct en 1 clic sur WhatsApp, SMS et réseaux sociaux.
+          </p>
+</div>
+</div>
+<!-- Question 2 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="faq-toggle w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none" type="button">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">edit_calendar</span>
+            Puis-je modifier les informations après diffusion ?
+          </span>
+<span class="faq-icon material-symbols-outlined text-primary text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Absolument. Contrairement à l’impression papier, notre conciergerie met à jour instantanément l’horaire de la mosquée, le lieu du dîner ou l’itinéraire sans que vos convives aient besoin de recevoir un nouveau lien. La mise à jour est immédiate et invisible.
+          </p>
+</div>
+</div>
+<!-- Question 3 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="faq-toggle w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none" type="button">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">public</span>
+            Comment les invités de la diaspora envoient-ils leurs présents ?
+          </span>
+<span class="faq-icon material-symbols-outlined text-primary text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Chaque invitation intègre notre module de cagnotte d’honneur multi-devises (Wave, Orange Money Sénégal, virement bancaire et cartes internationales VISA/Mastercard). Vos proches à Paris, New York ou Montréal participent en toute fluidité.
+          </p>
+</div>
+</div>
+<!-- Question 4 -->
+<div class="rounded-xl bg-surface-container overflow-hidden transition-all shadow-sm">
+<button class="faq-toggle w-full p-4 flex items-center justify-between text-left gap-3 focus:outline-none" type="button">
+<span class="font-label-md text-label-md text-on-surface font-semibold flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">diamond</span>
+            Quelle est la différence entre les formules et le sur-mesure ?
+          </span>
+<span class="faq-icon material-symbols-outlined text-primary text-[20px] transition-transform duration-200">expand_more</span>
+</button>
+<div class="faq-content hidden px-4 pb-4 pt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Les formules proposent des écrins déjà conçus avec vos personnalisations textuelles et photographiques. Le sur-mesure développe une création exclusive réalisée de concert avec vos designers floraux, faire-part vidéo personnalisé et animations 3D uniques.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- COUVERTURE INTERNATIONALE & HORAIRES D'ÉCOUTE -->
+<section class="px-margin mb-12">
+<div class="rounded-2xl bg-surface-container-high p-5 shadow-lg">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">language</span>
+<h3 class="font-label-md text-label-md uppercase tracking-wider text-on-surface font-semibold">
+          Rayonnement &amp; Fuseaux Accompagnés
+        </h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+        Notre conciergerie traite les célébrations à Dakar et coordonne la présence des familles issues de toute la diaspora :
+      </p>
+<!-- Hub Pills -->
+<div class="flex flex-wrap gap-2">
+<div class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Dakar (GMT)</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Abidjan (GMT)</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Paris (CET)</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+<span>New York (EST)</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+<span>Montréal (EST)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BANNIÈRE D'ENGAGEMENT QUALITÉ NDAJÉ -->
+<section class="px-margin mb-6">
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-6 text-center shadow-2xl">
+<!-- Ambient subtle gold wave background -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/10 via-surface-container-lowest to-transparent pointer-events-none"></div>
+<!-- Ndaje Monogram Icon Decorative -->
+<div class="relative w-10 h-10 mx-auto rounded-full p-[1px] gold-gradient mb-3 shadow-[0_0_16px_rgba(242,202,80,0.3)]">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center p-1.5">
+<span class="font-serif font-bold text-lg gold-text leading-none">N</span>
+</div>
+</div>
+<p class="relative font-serif italic text-xl sm:text-2xl text-on-surface font-medium leading-relaxed max-w-xs mx-auto">
+        « Chaque fête mérite son invitation d’exception. »
+      </p>
+<p class="relative font-label-sm text-[11px] uppercase tracking-widest text-primary-fixed mt-2">
+        Maison Ndajé • Dakar, Sénégal
+      </p>
+</div>
+</section>
+</div>
+<!-- Micro-interactions Script (Pill toggles, FAQ Accordions, Form handling) -->
+<script>
+  // Project Type Selection Pills
+  document.querySelectorAll('.project-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.project-pill').forEach(p => {
+        p.classList.remove('bg-surface-container-high', 'text-primary');
+        p.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      pill.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      pill.classList.add('bg-surface-container-high', 'text-primary');
+      const val = pill.getAttribute('data-val');
+      const input = document.getElementById('project_type_input');
+      if (input) input.value = val;
+    });
+  });
+
+  // FAQ Accordion Toggles
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isHidden = content.classList.contains('hidden');
+      
+      // Close all accordions for clean mobile feel
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+      
+      if (isHidden) {
+        content.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
+      }
+    });
+  });
+
+  // Contact Form Submission Mock
+  function handleSubmitNdaje() {
+    const btn = document.getElementById('submit-btn');
+    const successBox = document.getElementById('form-success');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span>Transmission en cours...</span>`;
+    }
+    setTimeout(() => {
+      if (btn) btn.classList.add('hidden');
+      if (successBox) successBox.classList.remove('hidden');
+    }, 900);
+  }
+</script>
+</main>
+<!-- FLOATING WHATSAPP ASSISTANT -->
+<aside class="fixed bottom-24 right-4 z-40">
+<a class="group flex items-center gap-2 pl-3 pr-4 py-2.5 rounded-full palace-blur border border-primary/50 shadow-[0_12px_32px_rgba(0,0,0,0.8),0_0_20px_rgba(242,202,80,0.2)] active:scale-95 transition-all" href="https://wa.me/221770000000" rel="noopener noreferrer" target="_blank">
+<span class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[16px] font-bold">chat</span>
+</span>
+<span class="font-label-sm text-primary-fixed group-hover:text-on-surface transition-colors">Conciergerie Ndajé</span>
+</a>
+</aside>
+<!-- BOTTOM 5-TAB NAVIGATION BAR -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe palace-blur shadow-[0_-8px_32px_rgba(0,0,0,0.85)]" data-active-classes="text-primary font-bold">
+<div class="flex items-center justify-around h-16 px-1.5">
+<!-- Tab 1: Accueil -->
+<a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="accueil" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="font-label-sm text-[10px] tracking-tight">Accueil</span>
+</a>
+<!-- Tab 2: Modèles -->
+<a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="modeles" href="#">
+<span class="material-symbols-outlined text-[22px]">collections_bookmark</span>
+<span class="font-label-sm text-[10px] tracking-tight">Modèles</span>
+</a>
+<!-- Tab 3: CRÉER (Central Highlighted Button) -->
+<a class="flex items-center justify-center min-h-[44px] -translate-y-3 px-4 py-2 rounded-full gold-gradient text-on-primary shadow-[0_8px_24px_rgba(242,202,80,0.45)] border border-primary-fixed active:scale-95 transition-all" data-path="creer" href="#">
+<span class="material-symbols-outlined text-[18px] mr-1 font-bold">magic_button</span>
+<span class="font-label-md text-[11px] font-extrabold uppercase tracking-wider text-on-primary">Créer</span>
+</a>
+<!-- Tab 4: Formules -->
+<a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="formules" href="#">
+<span class="material-symbols-outlined text-[22px]">crown</span>
+<span class="font-label-sm text-[10px] tracking-tight">Formules</span>
+</a>
+<!-- Tab 5: Contact -->
+<a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="contact" href="#">
+<span class="material-symbols-outlined text-[22px]">forum</span>
+<span class="font-label-sm text-[10px] tracking-tight">Contact</span>
+</a>
+</div>
+</nav>
+</body></html>
