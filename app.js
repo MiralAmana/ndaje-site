@@ -33,6 +33,12 @@
     var v = prix[el.getAttribute("data-prix")];
     if (v !== undefined) el.textContent = fcfa(v);
   });
+  // Équivalent en euros (arrondi) pour la diaspora : <span data-euro="premium"></span>
+  document.querySelectorAll("[data-euro]").forEach(function (el) {
+    var v = prix[el.getAttribute("data-euro")];
+    var taux = C.euroEnFcfa || 655.957;
+    if (v) el.textContent = Math.round(v / taux).toLocaleString("fr-FR");
+  });
   document.querySelectorAll("[data-delai]").forEach(function (el) {
     var v = delais[el.getAttribute("data-delai")];
     if (v) el.textContent = v;

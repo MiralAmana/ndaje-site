@@ -18,8 +18,11 @@ window.NDAJE_SITE = {
 
   // Facultatif : s'affichent sur la page Contact seulement s'ils sont renseignés.
   telephone: "+221 76 186 56 85",   // ex. "+221 77 000 00 00" (appel direct)
-  horaires: "Lun. – sam. : 8h – 21h · Dim. : 10h – 14h",    // ex. "8h30 - 22h00"
+  horaires: "Lun. – sam. : 8h – 21h · Dim. : 10h – 14h (heure de Dakar, GMT)",
   ville: "Dakar, Sénégal",       // ex. "Dakar, Sénégal" (adresse du studio)
+
+  // Parité fixe du franc CFA : sert à afficher l'équivalent en euros pour la diaspora.
+  euroEnFcfa: 655.957,
 
   // Prix en FCFA (affichés partout sur le site).
   prix: {

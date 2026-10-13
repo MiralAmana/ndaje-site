@@ -557,3 +557,6 @@ input, select, textarea { min-width: 0; max-width: 100%; }
   .logo-404 { width: 74px; height: 74px; }
   .logo-404 img { padding: 17px 10px; }
 }
+
+/* Équivalent en euros sous les prix (diaspora) */
+.formule .euro { margin: -.15rem 0 .1rem; color: var(--texte-doux); font-size: .85rem; font-variant-numeric: tabular-nums; }
