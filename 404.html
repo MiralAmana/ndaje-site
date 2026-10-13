@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Ndajé</title>
+  <meta name="description" content="Cette page n'existe pas ou a changé d'adresse.">
+  <meta name="theme-color" content="#030A07">
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Page introuvable — Ndajé">
+  <meta property="og:description" content="Cette page n'existe pas ou a changé d'adresse.">
+  <!-- À AJOUTER quand le domaine et le logo seront prêts : og:url et og:image en adresse complète (https://…) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/assets/logo.png">
+  <link rel="stylesheet" href="/style.css">
+  <script>/* écran de chargement : seulement à la première page de la visite */try{if(sessionStorage.getItem("ndaje-vu"))document.documentElement.classList.add("deja-vu");else sessionStorage.setItem("ndaje-vu","1")}catch(e){}</script>
+</head>
+<body>
+  <div class="chargement" id="chargement" aria-hidden="true">
+    <span class="logo-rond logo-rond-gd"><img src="/assets/logo.png" alt="" width="80" height="52"></span>
+    <p class="chargement-nom">Ndajé</p>
+    <div class="chargement-barre"><i></i></div>
+  </div>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <header class="entete">
+    <div class="conteneur">
+      <a class="marque" href="/index.html" aria-label="Ndajé, accueil">
+        <span class="logo-rond"><img src="/assets/logo.png" alt="" width="40" height="26"></span><span>Ndajé</span>
+      </a>
+      <nav class="menu" aria-label="Navigation principale"><a href="/index.html">Accueil</a><a href="/modeles.html">Modèles</a><a href="/formules.html">Formules</a><a href="/contact.html">Contact</a></nav>
+      <a class="btn btn-or" href="/creer.html">Créer mon invitation</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <section class="page-404">
+      <div class="conteneur">
+        <span class="badge">Page introuvable</span>
+        <p class="code-404" aria-hidden="true">4<span class="logo-rond logo-404"><img src="/assets/logo.png" alt="" width="80" height="52"></span>4</p>
+        <h1>Cette page s'est <span class="script">égarée</span></h1>
+        <p class="doux">Le lien est peut-être incomplet, ou la page a changé d'adresse. Pas d'inquiétude : la fête continue par ici.</p>
+        <div class="groupe-btn">
+          <a class="btn btn-or btn-large" href="/">Retour à l'accueil</a>
+          <a class="btn btn-contour btn-large" href="/modeles.html">Voir les modèles</a>
+        </div>
+        <p class="discret note-404">Vous cherchez une invitation reçue sur WhatsApp ? Rouvrez le lien depuis le message : chaque invitation a sa propre adresse.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur">
+      <div>
+        <strong>Ndajé</strong> · <span class="script">Chaque fête mérite son invitation</span><br>
+        Studio d'invitations digitales, Sénégal. © <span data-annee>2026</span> Ndajé
+      </div>
+      <nav aria-label="Pied de page">
+        <a href="/modeles.html">Modèles</a><a href="/formules.html">Formules</a><a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <a class="flottant" data-wa="Bonjour Ndajé, j'ai une question sur vos invitations.">WhatsApp</a>
+  <div class="avis" id="avis" role="status" hidden></div>
+  <nav class="barre-bas" aria-label="Navigation mobile"><a href="/index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Accueil</a><a href="/modeles.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Modèles</a><a href="/creer.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Créer</a><a href="/formules.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7l4 4 5-7 5 7 4-4-2 12H5z"/></svg>Formules</a><a href="/contact.html"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Contact</a></nav>
+
+  <script src="/config.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

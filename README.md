@@ -25,7 +25,16 @@ Le logo est dans `assets/logo.png` (en-tête et favicon). À faire plus tard : r
 - `index.html` : accueil. `modeles.html` : catalogue (filtres par cérémonie). `formules.html` : tarifs et comparatif.
 - `creer.html` : atelier en 4 étapes avec aperçu en direct et total estimé. Il accepte `?type=bapteme` et `?formule=Premium` pour préremplir.
 - `contact.html` : WhatsApp, demande personnalisée, questions fréquentes.
+- `404.html` : page « introuvable ». Vercel l'affiche tout seul pour toute adresse inconnue ; ses liens partent de la racine (`/style.css`…) pour marcher à n'importe quelle profondeur.
+- Écran de chargement (logo, nom, barre dorée) : seulement à la **première** page de la visite, au moins 0,9 s, au plus 3 s. Absent si le téléphone demande « réduire les animations ».
 - Les formulaires ne stockent rien : ils ouvrent WhatsApp avec le message prêt à envoyer.
+
+## Animations
+
+Dans `style.css` (fin du fichier) et `app.js` (bloc « Animations »), sans bibliothèque :
+entrée du hero en cascade, « sublimé » en or qui coule, carton qui flotte avec un reflet, éclat qui tourne autour du logo,
+reflet sur les boutons dorés, apparition des sections au défilement, prix et chiffres qui comptent, barre du taux de réponse qui se remplit.
+Tout est coupé si le téléphone demande « réduire les animations ». Sécurité : si le défilement n'est jamais détecté, tout s'affiche au bout de 4 s.
 
 ## Mise en ligne
 

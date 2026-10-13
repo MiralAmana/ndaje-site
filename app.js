@@ -5,6 +5,25 @@
   var prix = C.prix || {};
   var delais = C.delais || {};
 
+  // --- Écran de chargement ----------------------------------------------------
+  // Reste au moins 0,9 s (le temps de voir le logo), part dès que la page est
+  // prête, et jamais plus de 3 s même sur une connexion lente.
+  var ecranChargement = document.getElementById("chargement");
+  if (ecranChargement) {
+    var cache = false;
+    var cacherChargement = function () {
+      if (cache) return;
+      cache = true;
+      ecranChargement.classList.add("cache");
+      window.setTimeout(function () { ecranChargement.remove(); }, 800);
+    };
+    var dejaEcoule = window.performance && performance.now ? performance.now() : 0;
+    var attendre = function () { window.setTimeout(cacherChargement, Math.max(0, 900 - dejaEcoule)); };
+    if (document.readyState === "complete") attendre();
+    else window.addEventListener("load", attendre);
+    window.setTimeout(cacherChargement, 3000);
+  }
+
   function fcfa(n) {
     return Number(n).toLocaleString("fr-FR").replace(/ | /g, " ");
   }
@@ -248,6 +267,89 @@
       if (valeur(contactForm, "souhaits")) l.push("Souhaits : " + valeur(contactForm, "souhaits"));
       envoyerWhatsApp(l);
     });
+  }
+
+  // --- Animations : apparition au défilement, compteurs ---------------------
+  // Rien ne bouge si l'utilisateur a demandé « réduire les animations »,
+  // ou si le navigateur est trop ancien : le contenu reste alors visible.
+  var animationsOk = window.matchMedia && !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+    "IntersectionObserver" in window;
+
+  function compter(el, fin, format) {
+    var debut = null;
+    var duree = 1300;
+    function pas(t) {
+      if (debut === null) debut = t;
+      var p = Math.min((t - debut) / duree, 1);
+      var e = 1 - Math.pow(1 - p, 3); // ralentit à la fin
+      el.textContent = format(Math.round(fin * e));
+      if (p < 1) window.requestAnimationFrame(pas);
+      else el.textContent = format(fin); // valeur exacte à la fin
+    }
+    window.requestAnimationFrame(pas);
+  }
+
+  function lancerCompteurs(bloc) {
+    bloc.querySelectorAll(".prix [data-prix]").forEach(function (el) {
+      var v = prix[el.getAttribute("data-prix")];
+      if (v) compter(el, v, fcfa);
+    });
+    bloc.querySelectorAll(".stats .mini strong").forEach(function (el) {
+      var v = parseInt(el.textContent, 10);
+      if (v > 0) compter(el, v, String);
+    });
+  }
+
+  if (animationsOk) {
+    var cibles = document.querySelectorAll(
+      "main .entete-section, main .carte, main .col-carte, main .geste, main .option, " +
+      "main details, main .bandeau, main .defile, main .motif, main .panneau, main .puces-filtre"
+    );
+    var observateurActif = false;
+    var observateur = new IntersectionObserver(function (entrees) {
+      observateurActif = true;
+      entrees.forEach(function (entree) {
+        if (!entree.isIntersecting) return;
+        var el = entree.target;
+        el.classList.add("visible");
+        observateur.unobserve(el);
+        lancerCompteurs(el);
+        // une fois l'apparition terminée, le survol redevient rapide
+        window.setTimeout(function () {
+          el.classList.add("fini");
+          el.style.removeProperty("--delai");
+        }, 1000 + (parseFloat(el.style.getPropertyValue("--delai")) || 0) * 1000);
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+    cibles.forEach(function (el) {
+      // effet « cascade » : chaque élément d'une même rangée arrive un peu après le précédent
+      var freres = Array.prototype.filter.call(el.parentNode.children, function (f) {
+        return Array.prototype.indexOf.call(cibles, f) !== -1;
+      });
+      var rang = Math.min(freres.indexOf(el), 5);
+      if (rang > 0) el.style.setProperty("--delai", (rang * 0.09).toFixed(2) + "s");
+      el.classList.add("reveal");
+      observateur.observe(el);
+    });
+
+    // Sécurité : si le navigateur ne signale jamais le défilement (page en
+    // arrière-plan, navigateur intégré capricieux…), on affiche tout au bout de 4 s.
+    window.setTimeout(function () {
+      if (observateurActif) return;
+      cibles.forEach(function (el) { el.classList.add("visible", "fini"); });
+    }, 4000);
+
+    // Atelier « Créer » : l'aperçu fait un petit « pop » quand on tape
+    var formAtelier = document.getElementById("form-creer");
+    var carteApercu = document.querySelector(".apercu .carton-milieu");
+    if (formAtelier && carteApercu) {
+      formAtelier.addEventListener("input", function () {
+        carteApercu.classList.remove("maj");
+        void carteApercu.offsetWidth; // relance l'animation
+        carteApercu.classList.add("maj");
+      });
+    }
   }
 
   // --- Année du pied de page ---------------------------------------------

@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Créer mon invitation — Ndajé</title>
   <meta name="description" content="Personnalisez votre invitation Ndajé en 4 étapes, avec aperçu en direct. Votre demande s'ouvre dans WhatsApp, prête à envoyer.">
-  <meta name="theme-color" content="#0E0D0B">
+  <meta name="theme-color" content="#030A07">
+
   <meta property="og:type" content="website">
   <meta property="og:title" content="Créer mon invitation — Ndajé">
   <meta property="og:description" content="Personnalisez votre invitation Ndajé en 4 étapes, avec aperçu en direct. Votre demande s'ouvre dans WhatsApp, prête à envoyer.">
@@ -15,8 +16,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="stylesheet" href="style.css">
+  <script>/* écran de chargement : seulement à la première page de la visite */try{if(sessionStorage.getItem("ndaje-vu"))document.documentElement.classList.add("deja-vu");else sessionStorage.setItem("ndaje-vu","1")}catch(e){}</script>
 </head>
 <body>
+  <div class="chargement" id="chargement" aria-hidden="true">
+    <span class="logo-rond logo-rond-gd"><img src="assets/logo.png" alt="" width="80" height="52"></span>
+    <p class="chargement-nom">Ndajé</p>
+    <div class="chargement-barre"><i></i></div>
+  </div>
   <a class="lien-evitement" href="#contenu">Aller au contenu</a>
   <header class="entete">
     <div class="conteneur">
