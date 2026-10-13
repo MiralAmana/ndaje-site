@@ -7,7 +7,7 @@ window.NDAJE_SITE = {
   // Numéro WhatsApp de commande, au format international SANS + ni espaces.
   // Ex. "221771234567". Tant qu'il est vide, les boutons WhatsApp affichent
   // « Numéro bientôt disponible » au lieu d'envoyer vers un mauvais contact.
-  whatsapp: "",
+  whatsapp: "221761865685",
 
   // Adresse de la démo d'invitation (autre dépôt : ndaje-template, projet Vercel séparé).
   // À changer si le domaine change (ex. "https://demo.ndaje.sn/invitation/").
