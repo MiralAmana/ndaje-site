@@ -33,6 +33,11 @@
     var v = prix[el.getAttribute("data-prix")];
     if (v !== undefined) el.textContent = fcfa(v);
   });
+  // Nombres simples de la config : <span data-cfg-nombre="joursSouvenir"></span>
+  document.querySelectorAll("[data-cfg-nombre]").forEach(function (el) {
+    var v = C[el.getAttribute("data-cfg-nombre")];
+    if (v !== undefined) el.textContent = v;
+  });
   // Équivalent en euros (arrondi) pour la diaspora : <span data-euro="premium"></span>
   document.querySelectorAll("[data-euro]").forEach(function (el) {
     var v = prix[el.getAttribute("data-euro")];

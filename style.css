@@ -560,3 +560,8 @@ input, select, textarea { min-width: 0; max-width: 100%; }
 
 /* Équivalent en euros sous les prix (diaspora) */
 .formule .euro { margin: -.15rem 0 .1rem; color: var(--texte-doux); font-size: .85rem; font-variant-numeric: tabular-nums; }
+
+/* Options : grille qui s'adapte au nombre d'options (4 avec le souvenir prolongé) */
+@media (min-width: 720px) { .options { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .options { grid-template-columns: repeat(4, 1fr); } }
+.note-souvenir { margin: 1.25rem 0 0; font-size: .9rem; }

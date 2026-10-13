@@ -17,6 +17,8 @@ Tout est dans `config.js` :
 - `email`, `telephone`, `horaires`, `ville` : affichés sur la page Contact seulement s'ils sont remplis (vides = masqués).
 - `demoUrl` : adresse de la démo d'invitation (projet `ndaje-template`).
 - `prix` et `delais` : affichés partout sur le site.
+- `prix.optionSouvenir` (10 000 F, « Souvenir prolongé » 1 an) et `joursSouvenir` (30) : doivent rester alignés avec `souvenirApresJours` du template.
+- `euroEnFcfa` : parité fixe du franc CFA, pour les prix en euros affichés à la diaspora.
 
 Le logo est dans `assets/logo.png` (en-tête et favicon). À faire plus tard : remplacer les cadres « Photo à venir » par les visuels d'Aicha, et ajouter `og:url` / `og:image` (adresse complète) une fois le domaine prêt. Le nom s'écrit **Ndajé** dans tous les textes visibles.
 

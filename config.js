@@ -31,10 +31,14 @@ window.NDAJE_SITE = {
     prestige: 120000,
     optionWolof: 10000,
     optionExpress: 20000,
-    optionQrPass: 25000
+    optionQrPass: 25000,
+    optionSouvenir: 10000   // « Souvenir prolongé » : invitation complète 1 an de plus
   },
 
   // Délais de livraison affichés (texte libre).
+  // Nombre de jours après la fête avant que l'invitation devienne une page souvenir.
+  joursSouvenir: 30,
+
   delais: {
     essentiel: "48 heures",
     premium: "5 jours",
