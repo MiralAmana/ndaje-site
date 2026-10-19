@@ -164,6 +164,12 @@
         if (sansAccent(r.value) === sansAccent(typeUrl)) r.checked = true;
       });
     }
+    var modeleUrl = params.get("modele");
+    if (modeleUrl) {
+      creer.querySelectorAll("input[name=modele]").forEach(function (r) {
+        if (r.getAttribute("data-apercu") === modeleUrl) r.checked = true;
+      });
+    }
     var formuleUrl = params.get("formule");
     if (formuleUrl && cleFormule[formuleUrl]) creer.elements.formule.value = formuleUrl;
 
@@ -216,9 +222,55 @@
       if (creer.querySelector("input[data-opt=optionExpress]:checked") && delais.express) delai = delais.express;
       document.getElementById("recap-delai").textContent = delai;
     }
+    // --- Vrai aperçu : la vraie page du modèle, avec les infos tapées ---------
+    var cadre = document.getElementById("apercu-tel");
+    var iframe = document.getElementById("apercu-frame");
+    var carton = document.getElementById("apercu-carton");
+    var notePreview = document.getElementById("apercu-note");
+    var pleinEcran = document.getElementById("apercu-plein");
+    var minuterieApercu = null;
+    var urlModele = function () {
+      var r = creer.querySelector("input[name=modele]:checked");
+      var cle = r && r.getAttribute("data-apercu");
+      if (!cle) return "";
+      return cle === "demo" ? (C.demoUrl || "") : ((C.modelesUrl || {})[cle] || "");
+    };
+    function urlApercu() {
+      var base = urlModele();
+      if (!base) return "";
+      var noms = valeur(creer, "noms").split(/\s*(?:&|\+|,|\bet\b)\s*/i).filter(Boolean);
+      var p = new URLSearchParams({ direct: "1", apercu: "1" });
+      if (noms[0]) p.set("a", noms[0].slice(0, 40));
+      if (noms[1]) p.set("b", noms[1].slice(0, 40));
+      if (valeur(creer, "date")) p.set("date", valeur(creer, "date"));
+      if (valeur(creer, "heure")) p.set("heure", valeur(creer, "heure").slice(0, 10));
+      if (valeur(creer, "lieu")) p.set("lieu", valeur(creer, "lieu").slice(0, 80));
+      if (choisi("type")) p.set("type", choisi("type"));
+      return base + "?" + p.toString();
+    }
+    function majApercu() {
+      var url = urlApercu();
+      cadre.hidden = !url;
+      carton.hidden = !!url;
+      pleinEcran.hidden = !url;
+      notePreview.textContent = url
+        ? "Aperçu réel du modèle, avec vos informations. Les photos et les textes définitifs sont ajoutés avec vous."
+        : "Aperçu indicatif. Le rendu final est dessiné avec vous.";
+      if (!url) return;
+      pleinEcran.href = url;
+      if (iframe.getAttribute("src") !== url) iframe.setAttribute("src", url);
+    }
+    function planifierApercu() {
+      clearTimeout(minuterieApercu);
+      minuterieApercu = setTimeout(majApercu, 600); // attend la fin de la frappe
+    }
+
     creer.addEventListener("input", maj);
     creer.addEventListener("change", maj);
+    creer.addEventListener("input", planifierApercu);
+    creer.addEventListener("change", planifierApercu);
     maj();
+    majApercu();
 
     creer.addEventListener("submit", function (e) {
       e.preventDefault();

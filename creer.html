@@ -58,11 +58,13 @@
             <div class="champ panneau" id="etape-1" role="group" aria-labelledby="titre-1">
               <h2 class="titre-etape" id="titre-1"><span class="rond">1</span> Le modèle</h2>
               <div class="choix choix-col">
-                <label><input type="radio" name="modele" value="Modèle de la démo" checked><span>Le modèle de la démo en ligne</span></label>
+                <label><input type="radio" name="modele" value="Union Sacrée" data-apercu="unionSacree" checked><span>Union Sacrée (lie-de-vin, rose poudré et or)</span></label>
+                <label><input type="radio" name="modele" value="Modèle de la démo" data-apercu="demo"><span>Le modèle de la démo en ligne (émeraude et or)</span></label>
                 <label><input type="radio" name="modele" value="Autre modèle Ndajé"><span>Un autre modèle Ndajé (choisi avec vous)</span></label>
                 <label><input type="radio" name="modele" value="Sur mesure"><span>Création sur mesure (formule Prestige)</span></label>
               </div>
               <p class="note">Les nouveaux modèles arrivent bientôt. <a href="#" data-demo>Ouvrir la démo</a></p>
+              <a class="lien-apercu" href="#apercu">Voir l'aperçu réel de mon invitation ↓</a>
 
               <h3 class="sous-titre">L'événement et les hôtes</h3>
               <div class="choix">
@@ -154,14 +156,18 @@
                 <p class="note" style="margin:.5rem 0 0">Estimation : le devis final est confirmé avec vous sur WhatsApp. Livraison : <span id="recap-delai"></span>.</p>
               </div>
 
+              <a class="lien-apercu" href="#apercu">Vérifier l'aperçu avant d'envoyer ↓</a>
               <p class="erreur" id="erreur-form" role="alert"></p>
               <button class="btn btn-or btn-bloc btn-large" type="submit">Envoyer ma demande sur WhatsApp <span aria-hidden="true">→</span></button>
             </div>
           </form>
 
-          <aside class="apercu" aria-label="Aperçu en direct">
+          <aside class="apercu" id="apercu" aria-label="Aperçu en direct">
             <span class="surtitre">Rendu en temps réel · écran invité</span>
-            <div class="carton">
+            <div class="telephone apercu-tel" id="apercu-tel" hidden>
+              <div class="ecran"><iframe id="apercu-frame" title="Aperçu réel de votre invitation" referrerpolicy="no-referrer"></iframe></div>
+            </div>
+            <div class="carton" id="apercu-carton">
               <div class="carton-int">
                 <div class="carton-haut"><span class="pastille"><i></i>Invitation</span></div>
                 <div class="carton-milieu">
@@ -175,7 +181,8 @@
                 <div class="carton-bas"><span class="btn btn-or btn-petit" aria-hidden="true">Confirmer ma présence</span></div>
               </div>
             </div>
-            <p class="note" style="text-align:center">Aperçu indicatif. Le rendu final est dessiné avec vous.</p>
+            <p class="note" id="apercu-note" style="text-align:center">Aperçu indicatif. Le rendu final est dessiné avec vous.</p>
+            <a class="btn btn-contour btn-petit" id="apercu-plein" target="_blank" rel="noopener" hidden>Ouvrir l'aperçu en grand</a>
           </aside>
         </div>
       </div>

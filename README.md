@@ -25,7 +25,7 @@ Le logo est dans `assets/logo.png` (en-tête et favicon). À faire plus tard : r
 ## Les pages
 
 - `index.html` : accueil. `modeles.html` : catalogue (filtres par cérémonie). `formules.html` : tarifs et comparatif.
-- `creer.html` : atelier en 4 étapes avec aperçu en direct et total estimé. Il accepte `?type=bapteme` et `?formule=Premium` pour préremplir.
+- `creer.html` : atelier en 4 étapes avec aperçu en direct et total estimé. Il accepte `?type=bapteme`, `?formule=Premium` et `?modele=unionSacree` (ou `demo`) pour préremplir. L'aperçu affiche la **vraie page du modèle** (template, mode `?apercu=1`) avec les noms, la date, l'heure et le lieu tapés ; il est autorisé par `frame-src` dans la CSP de `vercel.json`.
 - `contact.html` : WhatsApp, demande personnalisée, questions fréquentes.
 - `404.html` : page « introuvable ». Vercel l'affiche tout seul pour toute adresse inconnue ; ses liens partent de la racine (`/style.css`…) pour marcher à n'importe quelle profondeur.
 - Écran de chargement (logo, nom, barre dorée) : seulement à la **première** page de la visite, au moins 0,9 s, au plus 3 s. Absent si le téléphone demande « réduire les animations ».
