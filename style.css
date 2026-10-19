@@ -568,7 +568,8 @@ input, select, textarea { min-width: 0; max-width: 100%; }
 
 /* Aperçu du modèle « Union Sacrée » (en attendant la photo d'Aicha) */
 .col-photo--union { background: radial-gradient(circle at 30% 25%, #fff 0, transparent 50%), linear-gradient(135deg, #F6E3E5, #F7F3EE 55%, #EBD3B5); }
-.union-apercu { display: grid; justify-items: center; gap: .2rem; font: italic 600 2.6rem/1 var(--police-titre); color: #7E2236; }
+.union-apercu { display: grid; justify-items: center; gap: .25rem; padding: .5rem 0 .75rem; font: italic 600 1.7rem/1.05 var(--police-titre); color: #7E2236; }
+.union-apercu img { width: 150px; height: auto; margin-bottom: .1rem; filter: drop-shadow(0 8px 14px rgba(126, 34, 54, .2)); }
 .union-apercu small { font: 500 .65rem var(--police-texte); font-style: normal; letter-spacing: .35em; text-transform: uppercase; color: #C9A24B; }
 
 /* Vrai aperçu du modèle dans un téléphone (page Créer) */
@@ -577,3 +578,7 @@ input, select, textarea { min-width: 0; max-width: 100%; }
 .lien-apercu { display: inline-flex; align-items: center; min-height: 44px; color: var(--or-clair); font-weight: 600; font-size: .9rem; }
 @media (min-width: 960px) { .lien-apercu { display: none; } } /* sur ordinateur, l'aperçu reste visible à droite */
 .apercu { scroll-margin-top: 80px; }
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes balance-bouquet { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
+  .union-apercu img { transform-origin: 50% 85%; animation: balance-bouquet 6s ease-in-out infinite; }
+}
