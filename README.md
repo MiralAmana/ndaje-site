@@ -42,6 +42,22 @@ Tout est coupé si le téléphone demande « réduire les animations ». Sécuri
 
 Vercel (projet statique, aucun réglage de build, preset « Other »). `maquettes/` n'est pas publié (`.vercelignore`).
 
+### En-têtes de sécurité (`vercel.json`)
+
+`vercel.json` ajoute des en-têtes de sécurité à toutes les pages :
+- **CSP** : seuls le site lui-même et Google Fonts sont autorisés ;
+- **HSTS** : HTTPS obligatoire ;
+- **X-Frame-Options** : le site ne peut pas être affiché dans un cadre sur un autre site ;
+- **Permissions-Policy** : pas de caméra, de micro ni de géolocalisation.
+
+⚠️ Le petit `<script>` de l'écran de chargement, dans le `<head>` de chaque page, est autorisé par son **empreinte** (`sha256-…` dans la CSP). Si tu modifies ce script, même d'un seul caractère, il sera bloqué. Recalcule alors l'empreinte et remplace-la dans `vercel.json` :
+
+```bash
+node -e "const h=require('fs').readFileSync('index.html','utf8').match(/<script>([\s\S]*?)<\/script>/)[1];console.log('sha256-'+require('crypto').createHash('sha256').update(h).digest('base64'))"
+```
+
+Si tu ajoutes une ressource externe (autre police, vidéo, carte…), ajoute son domaine dans la CSP.
+
 ## Design
 
 Maquettes Stitch dans `maquettes/` (accueil : `ndaje_mod_le_2_meraude…`). Thème émeraude et or, titres en Cormorant Garamond, texte en Plus Jakarta Sans. Pas d'emoji, touches sénégalaises discrètes.

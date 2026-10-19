@@ -13,6 +13,11 @@ window.NDAJE_SITE = {
   // À changer si le domaine change (ex. "https://demo.ndaje.sn/invitation/").
   demoUrl: "https://ndaje-template.vercel.app/invitation/",
 
+  // Démos des modèles d'Aicha (dépôt ndaje-template, dossier modeles/).
+  modelesUrl: {
+    unionSacree: "https://ndaje-template.vercel.app/modeles/union-sacree/"
+  },
+
   // Adresse e-mail de contact (laisser "" pour la masquer).
   email: "",
 

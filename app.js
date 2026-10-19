@@ -57,6 +57,12 @@
       a.hidden = true;
     }
   });
+  // Démos des modèles : <a data-modele="unionSacree">
+  document.querySelectorAll("[data-modele]").forEach(function (a) {
+    var url = (C.modelesUrl || {})[a.getAttribute("data-modele")];
+    if (url) a.href = url;
+    else a.hidden = true;
+  });
   document.querySelectorAll("[data-demo-src]").forEach(function (f) {
     if (C.demoUrl) f.src = C.demoUrl + "?direct=1";
   });

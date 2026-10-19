@@ -565,3 +565,8 @@ input, select, textarea { min-width: 0; max-width: 100%; }
 @media (min-width: 720px) { .options { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1100px) { .options { grid-template-columns: repeat(4, 1fr); } }
 .note-souvenir { margin: 1.25rem 0 0; font-size: .9rem; }
+
+/* Aperçu du modèle « Union Sacrée » (en attendant la photo d'Aicha) */
+.col-photo--union { background: radial-gradient(circle at 30% 25%, #fff 0, transparent 50%), linear-gradient(135deg, #F6E3E5, #F7F3EE 55%, #EBD3B5); }
+.union-apercu { display: grid; justify-items: center; gap: .2rem; font: italic 600 2.6rem/1 var(--police-titre); color: #7E2236; }
+.union-apercu small { font: 500 .65rem var(--police-texte); font-style: normal; letter-spacing: .35em; text-transform: uppercase; color: #C9A24B; }
