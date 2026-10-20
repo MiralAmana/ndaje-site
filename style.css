@@ -588,3 +588,15 @@ input, select, textarea { min-width: 0; max-width: 100%; }
 .logo-tuile img { width: 100%; height: 100%; object-fit: cover; }
 .logo-tuile--om { padding: 4px; }
 .logo-tuile--om img { object-fit: contain; }
+
+/* Aperçu du modèle « Dentelle Rosée » : deux volets en dentelle + sceau ovale */
+.col-photo--dentelle { background: #EDD1C4; overflow: hidden; }
+.dentelle-apercu { position: absolute; inset: 0; display: flex; }
+.dentelle-apercu img { width: 50%; height: 100%; object-fit: cover; object-position: right center; }
+.dentelle-apercu img + img { transform: scaleX(-1); }
+.dentelle-sceau {
+  position: absolute; left: 50%; top: 50%; width: 46px; height: 62px; margin: -31px 0 0 -23px; border-radius: 50%;
+  background: radial-gradient(ellipse at 40% 32%, #FCEDE7, #F1D6CB 72%);
+  box-shadow: 0 8px 16px -6px rgba(120, 70, 60, .5), 0 0 0 3px #F3DCD2, 0 0 0 4px rgba(184, 130, 115, .4), inset 1px 2px 3px #fff;
+}
+.col-photo--dentelle .pastille { z-index: 1; }

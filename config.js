@@ -15,7 +15,8 @@ window.NDAJE_SITE = {
 
   // Démos des modèles d'Aicha (dépôt ndaje-template, dossier modeles/).
   modelesUrl: {
-    unionSacree: "https://ndaje-template.vercel.app/modeles/union-sacree/"
+    unionSacree: "https://ndaje-template.vercel.app/modeles/union-sacree/",
+    dentelleRosee: "https://ndaje-template.vercel.app/modeles/dentelle-rosee/"
   },
 
   // Adresse e-mail de contact (laisser "" pour la masquer).
