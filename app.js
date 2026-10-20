@@ -158,6 +158,39 @@
     var cleFormule = { Essentiel: "essentiel", Premium: "premium", Prestige: "prestige" };
     var params = new URLSearchParams(window.location.search);
 
+    // --- Brouillon : ce qui est tapé reste sur ce téléphone (sans les numéros) -----
+    var CLE_BROUILLON = "ndaje-site:brouillon";
+    var champsBrouillon = ["modele", "type", "noms", "date", "heure", "lieu", "programme", "langue", "musique", "formule", "maxp", "limite", "souhaits"];
+    var estRadio = function (nom) { return !!creer.querySelector('input[type=radio][name="' + nom + '"]'); };
+    try {
+      var brouillon = JSON.parse(localStorage.getItem(CLE_BROUILLON) || "null");
+      if (brouillon) {
+        champsBrouillon.forEach(function (nom) {
+          var v = brouillon[nom];
+          if (typeof v !== "string") return;
+          if (estRadio(nom)) {
+            creer.querySelectorAll('input[type=radio][name="' + nom + '"]').forEach(function (r) { r.checked = r.value === v; });
+          } else if (creer.elements[nom]) {
+            creer.elements[nom].value = v;
+          }
+        });
+      }
+    } catch (e) { /* navigateur privé : pas de brouillon */ }
+    function sauverBrouillon() {
+      var b = {};
+      champsBrouillon.forEach(function (nom) {
+        if (estRadio(nom)) {
+          var r = creer.querySelector('input[type=radio][name="' + nom + '"]:checked');
+          if (r) b[nom] = r.value;
+        } else if (creer.elements[nom]) {
+          b[nom] = String(creer.elements[nom].value || "").slice(0, 600);
+        }
+      });
+      try { localStorage.setItem(CLE_BROUILLON, JSON.stringify(b)); } catch (e) { /* rien */ }
+    }
+    creer.addEventListener("input", sauverBrouillon);
+    creer.addEventListener("change", sauverBrouillon);
+
     var typeUrl = params.get("type");
     if (typeUrl) {
       creer.querySelectorAll("input[name=type]").forEach(function (r) {
@@ -229,11 +262,18 @@
     var notePreview = document.getElementById("apercu-note");
     var pleinEcran = document.getElementById("apercu-plein");
     var minuterieApercu = null;
+    var exempleApercu = "";  // nom du modèle montré en exemple (autre modèle, sur mesure)
+    var adresseModele = function (cle) { return cle === "demo" ? (C.demoUrl || "") : ((C.modelesUrl || {})[cle] || ""); };
     var urlModele = function () {
       var r = creer.querySelector("input[name=modele]:checked");
       var cle = r && r.getAttribute("data-apercu");
-      if (!cle) return "";
-      return cle === "demo" ? (C.demoUrl || "") : ((C.modelesUrl || {})[cle] || "");
+      exempleApercu = "";
+      if (cle && adresseModele(cle)) return adresseModele(cle);
+      // Pas de modèle associé : on montre quand même un vrai modèle, en exemple de rendu
+      var premier = creer.querySelector("input[name=modele][data-apercu]");
+      if (!premier || !adresseModele(premier.getAttribute("data-apercu"))) return "";
+      exempleApercu = premier.value;
+      return adresseModele(premier.getAttribute("data-apercu"));
     };
     function urlApercu() {
       var base = urlModele();
@@ -253,9 +293,11 @@
       cadre.hidden = !url;
       carton.hidden = !!url;
       pleinEcran.hidden = !url;
-      notePreview.textContent = url
-        ? "Aperçu réel du modèle, avec vos informations. Les photos et les textes définitifs sont ajoutés avec vous."
-        : "Aperçu indicatif. Le rendu final est dessiné avec vous.";
+      notePreview.textContent = !url
+        ? "Aperçu indicatif. Le rendu final est dessiné avec vous."
+        : exempleApercu
+          ? "Exemple de rendu avec le modèle « " + exempleApercu + " » et vos informations. Votre modèle sera choisi ou dessiné avec vous."
+          : "Aperçu réel du modèle, avec vos informations. Les photos et les textes définitifs sont ajoutés avec vous.";
       if (!url) return;
       pleinEcran.href = url;
       if (iframe.getAttribute("src") !== url) iframe.setAttribute("src", url);
